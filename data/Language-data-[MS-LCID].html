@@ -1,0 +1,6678 @@
+<!DOCTYPE html><html><head>
+<title>Language-data-[MS-LCID]</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="file:///c:\Users\raff4\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.19\crossnote\dependencies\katex\katex.min.css">
+
+<style>
+table { border-collapse: collapse; }
+th { background-color:#6699FF; }
+td { border:1px solid gray; }
+td.rtl { text-align:right; }
+table.data-table { width:1440px!important; }
+table.data-table tr:nth-child(odd) { background-color:#CCFFFF; }
+table.data-table tr:nth-child(even) { background-color:white; }
+a { text-decoration:none; }
+</style>
+
+<!-- The content below will be included at the end of the <head> element. -->
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function () {
+  // your code here
+});
+</script>
+</head>
+
+<body for="html-export">
+<div class="crossnote markdown-preview  ">
+
+<h1 id="windows-lcid-to-locale-mapping">Windows LCID to Locale Mapping </h1>
+<h4 id="columns">Columns </h4>
+<table style="width:1080px!important">
+<thead>
+<tr>
+<th style="text-align:left">Column name</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LCID</td>
+<td>Windows’ Language ID</td>
+</tr>
+<tr>
+<td>TAG</td>
+<td>Language Tag (ISO 639-1 &amp; etc)</td>
+</tr>
+<tr>
+<td>NEGFMT</td>
+<td>Formatting template for negative numbers - one of '(n)', '-n', '- n', 'n-' or 'n'</td>
+</tr>
+<tr>
+<td>GROUP</td>
+<td>Digit grouping for large numbers</td>
+</tr>
+<tr>
+<td>SEP</td>
+<td>Digit grouping character</td>
+</tr>
+<tr>
+<td>SepA</td>
+<td>ANSI code for digit grouping character</td>
+</tr>
+<tr>
+<td>DEC</td>
+<td>Decimal point character</td>
+</tr>
+<tr>
+<td>DecA</td>
+<td>ANSI code for decimal point</td>
+</tr>
+<tr>
+<td>TIMEFORMAT</td>
+<td>Format template for times ("hh:mm:ss")</td>
+</tr>
+<tr>
+<td>DATEFORMAT</td>
+<td>Format template for dates ("dd/MM/yyyy")</td>
+</tr>
+<tr>
+<td>LAYOUT</td>
+<td>Left-to-Right or Right-to-Left</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Language name in English</td>
+</tr>
+<tr>
+<td>NATIVE</td>
+<td>Language name in its native script</td>
+</tr>
+</tbody>
+</table>
+<h4 id="table">Table </h4>
+<!--
+<p><em>Created 2024-09-30 with</em> <code>OneLocale :: LanguageUtils_v2.ahk :: GetLanguagesTable()</code>
+-->
+</p>
+<p>All data per Microsoft API routines. See <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f">[MS-LCID]: Windows Language Code Identifier (LCID) Reference</a> and related documentation.</p>
+<!--
+<p><strong>Use <code>&lt;=</code> and <code>=&gt;</code> arrow keys to view all columns</strong></p>
+-->
+<p></p>
+
+<table class="data-table">
+<thead>
+<tr>
+<th style="text-align:left">LCID:</th>
+<th style="text-align:left">TAG:</th>
+<th style="text-align:left">NEGFMT:</th>
+<th style="text-align:left">GROUP:</th>
+<th style="text-align:left">SEP:</th>
+<th style="text-align:left">SepA</th>
+<th style="text-align:left">DEC:</th>
+<th style="text-align:left">DecA</th>
+<th style="text-align:left">TIMEFORMAT:</th>
+<th style="text-align:left">DATEFORMAT:</th>
+<th style="text-align:left">LAYOUT</th>
+<th style="text-align:left">NAME:</th>
+<th style="text-align:left">NATIVE:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>'0036'</td>
+<td>af</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Afrikaans</td>
+<td>Afrikaans</td>
+</tr>
+<tr>
+<td>'0436'</td>
+<td>af-ZA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Afrikaans (South Africa)</td>
+<td>Afrikaans (Suid-Afrika)</td>
+</tr>
+<tr>
+<td>'001C'</td>
+<td>sq</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy</td>
+<td>ltr</td>
+<td>Albanian</td>
+<td>shqip</td>
+</tr>
+<tr>
+<td>'041C'</td>
+<td>sq-AL</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy</td>
+<td>ltr</td>
+<td>Albanian (Albania)</td>
+<td>shqip (Shqipëri)</td>
+</tr>
+<tr>
+<td>'0484'</td>
+<td>gsw-FR</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Alsatian (France)</td>
+<td>Elsässisch (Frànkrisch)</td>
+</tr>
+<tr>
+<td>'005E'</td>
+<td>am</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Amharic</td>
+<td>አማርኛ</td>
+</tr>
+<tr>
+<td>'045E'</td>
+<td>am-ET</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Amharic (Ethiopia)</td>
+<td>አማርኛ (ኢትዮጵያ)</td>
+</tr>
+<tr>
+<td>'0001'</td>
+<td>ar</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Arabic</td>
+<td class="rtl">العربية</td>
+</tr>
+<tr>
+<td>'1401'</td>
+<td>ar-DZ</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>rtl</td>
+<td>Arabic (Algeria)</td>
+<td class="rtl">العربية (الجزائر)</td>
+</tr>
+<tr>
+<td>'3C01'</td>
+<td>ar-BH</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Arabic (Bahrain)</td>
+<td class="rtl">العربية (البحرين)</td>
+</tr>
+<tr>
+<td>'0C01'</td>
+<td>ar-EG</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Arabic (Egypt)</td>
+<td class="rtl">العربية (مصر)</td>
+</tr>
+<tr>
+<td>'0801'</td>
+<td>ar-IQ</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Arabic (Iraq)</td>
+<td class="rtl">العربية (العراق)</td>
+</tr>
+<tr>
+<td>'2C01'</td>
+<td>ar-JO</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Arabic (Jordan)</td>
+<td class="rtl">العربية (الأردن)</td>
+</tr>
+<tr>
+<td>'3401'</td>
+<td>ar-KW</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Arabic (Kuwait)</td>
+<td class="rtl">العربية (الكويت)</td>
+</tr>
+<tr>
+<td>'3001'</td>
+<td>ar-LB</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Arabic (Lebanon)</td>
+<td class="rtl">العربية (لبنان)</td>
+</tr>
+<tr>
+<td>'1001'</td>
+<td>ar-LY</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Arabic (Libya)</td>
+<td class="rtl">العربية (ليبيا)</td>
+</tr>
+<tr>
+<td>'1801'</td>
+<td>ar-MA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>rtl</td>
+<td>Arabic (Morocco)</td>
+<td class="rtl">العربية (المملكة المغربية)</td>
+</tr>
+<tr>
+<td>'2001'</td>
+<td>ar-OM</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Arabic (Oman)</td>
+<td class="rtl">العربية (عمان)</td>
+</tr>
+<tr>
+<td>'4001'</td>
+<td>ar-QA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Arabic (Qatar)</td>
+<td class="rtl">العربية (قطر)</td>
+</tr>
+<tr>
+<td>'0401'</td>
+<td>ar-SA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Arabic (Saudi Arabia)</td>
+<td class="rtl">العربية (المملكة العربية السعودية)</td>
+</tr>
+<tr>
+<td>'2801'</td>
+<td>ar-SY</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Arabic (Syria)</td>
+<td class="rtl">العربية (سوريا)</td>
+</tr>
+<tr>
+<td>'1C01'</td>
+<td>ar-TN</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>rtl</td>
+<td>Arabic (Tunisia)</td>
+<td class="rtl">العربية (تونس)</td>
+</tr>
+<tr>
+<td>'3801'</td>
+<td>ar-AE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Arabic (United Arab Emirates)</td>
+<td class="rtl">العربية (الإمارات العربية المتحدة)</td>
+</tr>
+<tr>
+<td>'2401'</td>
+<td>ar-YE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Arabic (Yemen)</td>
+<td class="rtl">العربية (اليمن)</td>
+</tr>
+<tr>
+<td>'002B'</td>
+<td>hy</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Armenian</td>
+<td>Հայերեն</td>
+</tr>
+<tr>
+<td>'042B'</td>
+<td>hy-AM</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Armenian (Armenia)</td>
+<td>Հայերեն (Հայաստան)</td>
+</tr>
+<tr>
+<td>'004D'</td>
+<td>as</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Assamese</td>
+<td>অসমীয়া</td>
+</tr>
+<tr>
+<td>'044D'</td>
+<td>as-IN</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Assamese (India)</td>
+<td>অসমীয়া (ভাৰত)</td>
+</tr>
+<tr>
+<td>'002C'</td>
+<td>az</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Azerbaijani</td>
+<td>azərbaycan</td>
+</tr>
+<tr>
+<td>'082C'</td>
+<td>az-Cyrl-AZ</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Azerbaijani (Cyrillic, Azerbaijan)</td>
+<td>азәрбајҹан (Азәрбајҹан)</td>
+</tr>
+<tr>
+<td>'742C'</td>
+<td>az-Cyrl</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Azerbaijani (Cyrillic)</td>
+<td>Азәрбајҹан&nbsp;дили (Кирил)</td>
+</tr>
+<tr>
+<td>'042C'</td>
+<td>az-Latn-AZ</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Azerbaijani (Latin, Azerbaijan)</td>
+<td>azərbaycan (Azərbaycan)</td>
+</tr>
+<tr>
+<td>'782C'</td>
+<td>az-Latn</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Azerbaijani (Latin)</td>
+<td>Azərbaycan­ılı (Latın)</td>
+</tr>
+<tr>
+<td>'0045'</td>
+<td>bn</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Bangla</td>
+<td>বাংলা</td>
+</tr>
+<tr>
+<td>'0845'</td>
+<td>bn-BD</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Bangla (Bangladesh)</td>
+<td>বাংলা (বাংলাদেশ)</td>
+</tr>
+<tr>
+<td>'006D'</td>
+<td>ba</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yy</td>
+<td>ltr</td>
+<td>Bashkir</td>
+<td>Башҡорт</td>
+</tr>
+<tr>
+<td>'046D'</td>
+<td>ba-RU</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yy</td>
+<td>ltr</td>
+<td>Bashkir (Russia)</td>
+<td>Башҡорт (Рәсәй)</td>
+</tr>
+<tr>
+<td>'002D'</td>
+<td>eu</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>ltr</td>
+<td>Basque</td>
+<td>euskara</td>
+</tr>
+<tr>
+<td>'042D'</td>
+<td>eu-ES</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>ltr</td>
+<td>Basque (Basque)</td>
+<td>euskara (euskara)</td>
+</tr>
+<tr>
+<td>'0023'</td>
+<td>be</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd.MM.yy</td>
+<td>ltr</td>
+<td>Belarusian</td>
+<td>Беларуская</td>
+</tr>
+<tr>
+<td>'0423'</td>
+<td>be-BY</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd.MM.yy</td>
+<td>ltr</td>
+<td>Belarusian (Belarus)</td>
+<td>Беларуская (Беларусь)</td>
+</tr>
+<tr>
+<td>'0445'</td>
+<td>bn-IN</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh.mm.ss</td>
+<td>dd-MM-yy</td>
+<td>ltr</td>
+<td>Bengali (India)</td>
+<td>বাংলা (ভারত)</td>
+</tr>
+<tr>
+<td>'781A'</td>
+<td>bs</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d. M. yyyy.</td>
+<td>ltr</td>
+<td>Bosnian</td>
+<td>bosanski</td>
+</tr>
+<tr>
+<td>'201A'</td>
+<td>bs-Cyrl-BA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy</td>
+<td>ltr</td>
+<td>Bosnian (Cyrillic, Bosnia and Herzegovina)</td>
+<td>босански (Босна и Херцеговина)</td>
+</tr>
+<tr>
+<td>'641A'</td>
+<td>bs-Cyrl</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy</td>
+<td>ltr</td>
+<td>Bosnian (Cyrillic)</td>
+<td>босански (Ћирилица)</td>
+</tr>
+<tr>
+<td>'141A'</td>
+<td>bs-Latn-BA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d. M. yyyy.</td>
+<td>ltr</td>
+<td>Bosnian (Latin, Bosnia &amp; Herzegovina)</td>
+<td>bosanski (Bosna i Hercegovina)</td>
+</tr>
+<tr>
+<td>'681A'</td>
+<td>bs-Latn</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d. M. yyyy.</td>
+<td>ltr</td>
+<td>Bosnian (Latin)</td>
+<td>bosanski (Latinica)</td>
+</tr>
+<tr>
+<td>'007E'</td>
+<td>br</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Breton</td>
+<td>brezhoneg</td>
+</tr>
+<tr>
+<td>'047E'</td>
+<td>br-FR</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Breton (France)</td>
+<td>brezhoneg (Frañs)</td>
+</tr>
+<tr>
+<td>'0002'</td>
+<td>bg</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>d.M.yyyy 'г.'</td>
+<td>ltr</td>
+<td>Bulgarian</td>
+<td>български</td>
+</tr>
+<tr>
+<td>'0402'</td>
+<td>bg-BG</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>d.M.yyyy 'г.'</td>
+<td>ltr</td>
+<td>Bulgarian (Bulgaria)</td>
+<td>български (България)</td>
+</tr>
+<tr>
+<td>'0055'</td>
+<td>my</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Burmese</td>
+<td>ဗမာ</td>
+</tr>
+<tr>
+<td>'0455'</td>
+<td>my-MM</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Burmese (Myanmar)</td>
+<td>မြန်မာ (မြန်မာ)</td>
+</tr>
+<tr>
+<td>'0003'</td>
+<td>ca</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Catalan</td>
+<td>català</td>
+</tr>
+<tr>
+<td>'0403'</td>
+<td>ca-ES</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Catalan (Catalan)</td>
+<td>català (català)</td>
+</tr>
+<tr>
+<td>'005F'</td>
+<td>tzm</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Central Atlas Tamazight</td>
+<td>Tamaziɣt n laṭlaṣ</td>
+</tr>
+<tr>
+<td>'045F'</td>
+<td>tzm-Arab-MA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>rtl</td>
+<td>Central Atlas Tamazight (Arabic, Morocco)</td>
+<td class="rtl">أطلس المركزية التامازيتية (Morocco)</td>
+</tr>
+<tr>
+<td>'085F'</td>
+<td>tzm-Latn-DZ</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Central Atlas Tamazight (Latin, Algeria)</td>
+<td>Tamaziɣt n laṭlaṣ (Djazaïr)</td>
+</tr>
+<tr>
+<td>'7C5F'</td>
+<td>tzm-Latn</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Central Atlas Tamazight (Latin)</td>
+<td>Tamaziɣt n laṭlaṣ (Latin)</td>
+</tr>
+<tr>
+<td>'105F'</td>
+<td>tzm-Tfng-MA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Central Atlas Tamazight (Tifinagh, Morocco)</td>
+<td>ⵜⴰⵎⴰⵣⵉⵖⵜ (ⵍⵎⵖⵔⵉⴱ)</td>
+</tr>
+<tr>
+<td>'785F'</td>
+<td>tzm-Tfng</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Central Atlas Tamazight (Tifinagh)</td>
+<td>Tamazight (Tifinagh)</td>
+</tr>
+<tr>
+<td>'0092'</td>
+<td>ku</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>yyyy/MM/dd</td>
+<td>rtl</td>
+<td>Central Kurdish</td>
+<td class="rtl">کوردیی ناوەڕاست</td>
+</tr>
+<tr>
+<td>'7C92'</td>
+<td>ku-Arab</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>yyyy/MM/dd</td>
+<td>rtl</td>
+<td>Central Kurdish</td>
+<td class="rtl">کوردیی ناوەڕاست</td>
+</tr>
+<tr>
+<td>'0492'</td>
+<td>ku-Arab-IQ</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>yyyy/MM/dd</td>
+<td>rtl</td>
+<td>Central Kurdish (Iraq)</td>
+<td class="rtl">کوردیی ناوەڕاست (عێراق)</td>
+</tr>
+<tr>
+<td>'005C'</td>
+<td>chr</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>M/d/yyyy</td>
+<td>ltr</td>
+<td>Cherokee</td>
+<td>ᏣᎳᎩ</td>
+</tr>
+<tr>
+<td>'7C5C'</td>
+<td>chr-Cher</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>M/d/yyyy</td>
+<td>ltr</td>
+<td>Cherokee</td>
+<td>ᏣᎳᎩ</td>
+</tr>
+<tr>
+<td>'045C'</td>
+<td>chr-Cher-US</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>M/d/yyyy</td>
+<td>ltr</td>
+<td>Cherokee (Cherokee, United States)</td>
+<td>ᏣᎳᎩ (ᏌᏊ ᎢᏳᎾᎵᏍᏔᏅ ᏍᎦᏚᎩ)</td>
+</tr>
+<tr>
+<td>'7804'</td>
+<td>zh</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>ja-JP</td>
+<td>Chinese</td>
+<td>中文</td>
+</tr>
+<tr>
+<td>'0804'</td>
+<td>zh-CN</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>ja-JP</td>
+<td>Chinese (Simplified, China)</td>
+<td>中文(中国)</td>
+</tr>
+<tr>
+<td>'1004'</td>
+<td>zh-SG</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ja-JP</td>
+<td>Chinese (Simplified, Singapore)</td>
+<td>中文(新加坡)</td>
+</tr>
+<tr>
+<td>'0004'</td>
+<td>zh-Hans</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>ja-JP</td>
+<td>Chinese (Simplified)</td>
+<td>中文(简体)</td>
+</tr>
+<tr>
+<td>'0C04'</td>
+<td>zh-HK</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ja-JP</td>
+<td>Chinese (Traditional, Hong Kong SAR)</td>
+<td>中文(香港特別行政區)</td>
+</tr>
+<tr>
+<td>'1404'</td>
+<td>zh-MO</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Chinese (Traditional, Macao SAR)</td>
+<td>中文(澳門特別行政區)</td>
+</tr>
+<tr>
+<td>'0404'</td>
+<td>zh-TW</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>ja-JP</td>
+<td>Chinese (Traditional, Taiwan)</td>
+<td>中文(台灣)</td>
+</tr>
+<tr>
+<td>'7C04'</td>
+<td>zh-Hant</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ja-JP</td>
+<td>Chinese (Traditional)</td>
+<td>中文(繁體)</td>
+</tr>
+<tr>
+<td>'0083'</td>
+<td>co</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Corsican</td>
+<td>Corsu</td>
+</tr>
+<tr>
+<td>'0483'</td>
+<td>co-FR</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Corsican (France)</td>
+<td>Corsu (Francia)</td>
+</tr>
+<tr>
+<td>'001A'</td>
+<td>hr</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy.</td>
+<td>ltr</td>
+<td>Croatian</td>
+<td>hrvatski</td>
+</tr>
+<tr>
+<td>'101A'</td>
+<td>hr-BA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d. M. yyyy.</td>
+<td>ltr</td>
+<td>Croatian (Bosnia &amp; Herzegovina)</td>
+<td>hrvatski (Bosna i Hercegovina)</td>
+</tr>
+<tr>
+<td>'041A'</td>
+<td>hr-HR</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy.</td>
+<td>ltr</td>
+<td>Croatian (Croatia)</td>
+<td>hrvatski (Hrvatska)</td>
+</tr>
+<tr>
+<td>'0005'</td>
+<td>cs</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Czech</td>
+<td>čeština</td>
+</tr>
+<tr>
+<td>'0405'</td>
+<td>cs-CZ</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Czech (Czechia)</td>
+<td>čeština (Česko)</td>
+</tr>
+<tr>
+<td>'0006'</td>
+<td>da</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Danish</td>
+<td>dansk</td>
+</tr>
+<tr>
+<td>'0406'</td>
+<td>da-DK</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Danish (Denmark)</td>
+<td>dansk (Danmark)</td>
+</tr>
+<tr>
+<td>'008C'</td>
+<td>prs</td>
+<td>n-</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>rtl</td>
+<td>Dari</td>
+<td class="rtl">درى</td>
+</tr>
+<tr>
+<td>'048C'</td>
+<td>prs-AF</td>
+<td>n-</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>rtl</td>
+<td>Dari (Afghanistan)</td>
+<td class="rtl">درى (افغانستان)</td>
+</tr>
+<tr>
+<td>'0065'</td>
+<td>dv</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yy</td>
+<td>rtl</td>
+<td>Divehi</td>
+<td class="rtl">ދިވެހިބަސް</td>
+</tr>
+<tr>
+<td>'0465'</td>
+<td>dv-MV</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yy</td>
+<td>rtl</td>
+<td>Divehi (Maldives)</td>
+<td class="rtl">ދިވެހިބަސް (ދިވެހި ރާއްޖެ)</td>
+</tr>
+<tr>
+<td>'0013'</td>
+<td>nl</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d-M-yyyy</td>
+<td>ltr</td>
+<td>Dutch</td>
+<td>Nederlands</td>
+</tr>
+<tr>
+<td>'0813'</td>
+<td>nl-BE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/MM/yyyy</td>
+<td>ltr</td>
+<td>Dutch (Belgium)</td>
+<td>Nederlands (België)</td>
+</tr>
+<tr>
+<td>'0413'</td>
+<td>nl-NL</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d-M-yyyy</td>
+<td>ltr</td>
+<td>Dutch (Netherlands)</td>
+<td>Nederlands (Nederland)</td>
+</tr>
+<tr>
+<td>'0C51'</td>
+<td>dz-BT</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Dzongkha (Bhutan)</td>
+<td>རྫོང་ཁ (འབྲུག)</td>
+</tr>
+<tr>
+<td>'0066'</td>
+<td>bin</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Edo</td>
+<td>Ẹ̀dó</td>
+</tr>
+<tr>
+<td>'0466'</td>
+<td>bin-NG</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Edo (Nigeria)</td>
+<td>Ẹ̀dó (Nigeria)</td>
+</tr>
+<tr>
+<td>'0009'</td>
+<td>en</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>M/d/yyyy</td>
+<td>ltr</td>
+<td>English</td>
+<td>English</td>
+</tr>
+<tr>
+<td>'0C09'</td>
+<td>en-AU</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/MM/yyyy</td>
+<td>ltr</td>
+<td>English (Australia)</td>
+<td>English (Australia)</td>
+</tr>
+<tr>
+<td>'2809'</td>
+<td>en-BZ</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>English (Belize)</td>
+<td>English (Belize)</td>
+</tr>
+<tr>
+<td>'1009'</td>
+<td>en-CA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>English (Canada)</td>
+<td>English (Canada)</td>
+</tr>
+<tr>
+<td>'2409'</td>
+<td>en-029</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>English (Caribbean)</td>
+<td>English (Caribbean)</td>
+</tr>
+<tr>
+<td>'3C09'</td>
+<td>en-HK</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>English (Hong Kong SAR)</td>
+<td>English (Hong Kong SAR)</td>
+</tr>
+<tr>
+<td>'4009'</td>
+<td>en-IN</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>English (India)</td>
+<td>English (India)</td>
+</tr>
+<tr>
+<td>'3809'</td>
+<td>en-ID</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>English (Indonesia)</td>
+<td>English (Indonesia)</td>
+</tr>
+<tr>
+<td>'1809'</td>
+<td>en-IE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>English (Ireland)</td>
+<td>English (Ireland)</td>
+</tr>
+<tr>
+<td>'2009'</td>
+<td>en-JM</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>English (Jamaica)</td>
+<td>English (Jamaica)</td>
+</tr>
+<tr>
+<td>'4409'</td>
+<td>en-MY</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>English (Malaysia)</td>
+<td>English (Malaysia)</td>
+</tr>
+<tr>
+<td>'1409'</td>
+<td>en-NZ</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/MM/yyyy</td>
+<td>ltr</td>
+<td>English (New Zealand)</td>
+<td>English (New Zealand)</td>
+</tr>
+<tr>
+<td>'3409'</td>
+<td>en-PH</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>English (Philippines)</td>
+<td>English (Philippines)</td>
+</tr>
+<tr>
+<td>'4809'</td>
+<td>en-SG</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>English (Singapore)</td>
+<td>English (Singapore)</td>
+</tr>
+<tr>
+<td>'1C09'</td>
+<td>en-ZA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy/MM/dd</td>
+<td>ltr</td>
+<td>English (South Africa)</td>
+<td>English (South Africa)</td>
+</tr>
+<tr>
+<td>'2C09'</td>
+<td>en-TT</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>English (Trinidad &amp; Tobago)</td>
+<td>English (Trinidad &amp; Tobago)</td>
+</tr>
+<tr>
+<td>'4C09'</td>
+<td>en-AE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>English (United Arab Emirates)</td>
+<td>English (United Arab Emirates)</td>
+</tr>
+<tr>
+<td>'0809'</td>
+<td>en-GB</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>English (United Kingdom)</td>
+<td>English (United Kingdom)</td>
+</tr>
+<tr>
+<td>'0409'</td>
+<td>en-US</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>English (United States)</td>
+<td>English (United States)</td>
+</tr>
+<tr>
+<td>'3009'</td>
+<td>en-ZW</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>English (Zimbabwe)</td>
+<td>English (Zimbabwe)</td>
+</tr>
+<tr>
+<td>'0025'</td>
+<td>et</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Estonian</td>
+<td>eesti</td>
+</tr>
+<tr>
+<td>'0425'</td>
+<td>et-EE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Estonian (Estonia)</td>
+<td>eesti (Eesti)</td>
+</tr>
+<tr>
+<td>'0038'</td>
+<td>fo</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Faroese</td>
+<td>føroyskt</td>
+</tr>
+<tr>
+<td>'0438'</td>
+<td>fo-FO</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Faroese (Faroe Islands)</td>
+<td>føroyskt (Føroyar)</td>
+</tr>
+<tr>
+<td>'0064'</td>
+<td>fil</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>M/d/yyyy</td>
+<td>ltr</td>
+<td>Filipino</td>
+<td>Filipino</td>
+</tr>
+<tr>
+<td>'0464'</td>
+<td>fil-PH</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>M/d/yyyy</td>
+<td>ltr</td>
+<td>Filipino (Philippines)</td>
+<td>Filipino (Pilipinas)</td>
+</tr>
+<tr>
+<td>'000B'</td>
+<td>fi</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h.mm.ss</td>
+<td>d.M.yyyy</td>
+<td>ltr</td>
+<td>Finnish</td>
+<td>suomi</td>
+</tr>
+<tr>
+<td>'040B'</td>
+<td>fi-FI</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h.mm.ss</td>
+<td>d.M.yyyy</td>
+<td>ltr</td>
+<td>Finnish (Finland)</td>
+<td>suomi (Suomi)</td>
+</tr>
+<tr>
+<td>'000C'</td>
+<td>fr</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>French</td>
+<td>français</td>
+</tr>
+<tr>
+<td>'080C'</td>
+<td>fr-BE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yy</td>
+<td>ltr</td>
+<td>French (Belgium)</td>
+<td>français (Belgique)</td>
+</tr>
+<tr>
+<td>'2C0C'</td>
+<td>fr-CM</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>French (Cameroon)</td>
+<td>français (Cameroun)</td>
+</tr>
+<tr>
+<td>'0C0C'</td>
+<td>fr-CA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>French (Canada)</td>
+<td>français (Canada)</td>
+</tr>
+<tr>
+<td>'1C0C'</td>
+<td>fr-029</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>French (Caribbean)</td>
+<td>français (caraïbes)</td>
+</tr>
+<tr>
+<td>'300C'</td>
+<td>fr-CI</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>French (Côte d’Ivoire)</td>
+<td>français (Côte d’Ivoire)</td>
+</tr>
+<tr>
+<td>'040C'</td>
+<td>fr-FR</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>French (France)</td>
+<td>français (France)</td>
+</tr>
+<tr>
+<td>'3C0C'</td>
+<td>fr-HT</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>French (Haiti)</td>
+<td>français (Haïti)</td>
+</tr>
+<tr>
+<td>'140C'</td>
+<td>fr-LU</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>French (Luxembourg)</td>
+<td>français (Luxembourg)</td>
+</tr>
+<tr>
+<td>'340C'</td>
+<td>fr-ML</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>French (Mali)</td>
+<td>français (Mali)</td>
+</tr>
+<tr>
+<td>'180C'</td>
+<td>fr-MC</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>French (Monaco)</td>
+<td>français (Monaco)</td>
+</tr>
+<tr>
+<td>'380C'</td>
+<td>fr-MA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>French (Morocco)</td>
+<td>français (Maroc)</td>
+</tr>
+<tr>
+<td>'200C'</td>
+<td>fr-RE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>French (Réunion)</td>
+<td>français (La Réunion)</td>
+</tr>
+<tr>
+<td>'280C'</td>
+<td>fr-SN</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>French (Senegal)</td>
+<td>français (Sénégal)</td>
+</tr>
+<tr>
+<td>'100C'</td>
+<td>fr-CH</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>French (Switzerland)</td>
+<td>français (Suisse)</td>
+</tr>
+<tr>
+<td>'240C'</td>
+<td>fr-CD</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>French Congo (DRC)</td>
+<td>français (Congo, République démocratique du)</td>
+</tr>
+<tr>
+<td>'0467'</td>
+<td>ff-Latn-NG</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Fulah (Latin, Nigeria)</td>
+<td>Pulaar (Nijeriyaa)</td>
+</tr>
+<tr>
+<td>'0867'</td>
+<td>ff-Latn-SN</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Fulah (Latin, Senegal)</td>
+<td>Pulaar (Senegaal)</td>
+</tr>
+<tr>
+<td>'0067'</td>
+<td>ff</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Fulah (Latin)</td>
+<td>Pulaar</td>
+</tr>
+<tr>
+<td>'7C67'</td>
+<td>ff-Latn</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Fulah (Latin)</td>
+<td>Pulaar</td>
+</tr>
+<tr>
+<td>'0056'</td>
+<td>gl</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Galician</td>
+<td>galego</td>
+</tr>
+<tr>
+<td>'0456'</td>
+<td>gl-ES</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Galician (Galician)</td>
+<td>galego (galego)</td>
+</tr>
+<tr>
+<td>'0037'</td>
+<td>ka</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Georgian</td>
+<td>ქართული</td>
+</tr>
+<tr>
+<td>'0437'</td>
+<td>ka-GE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Georgian (Georgia)</td>
+<td>ქართული (საქართველო)</td>
+</tr>
+<tr>
+<td>'0007'</td>
+<td>de</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>German</td>
+<td>Deutsch</td>
+</tr>
+<tr>
+<td>'0C07'</td>
+<td>de-AT</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>German (Austria)</td>
+<td>Deutsch (Österreich)</td>
+</tr>
+<tr>
+<td>'0407'</td>
+<td>de-DE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>German (Germany)</td>
+<td>Deutsch (Deutschland)</td>
+</tr>
+<tr>
+<td>'1407'</td>
+<td>de-LI</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'’'</td>
+<td>8217</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>German (Liechtenstein)</td>
+<td>Deutsch (Liechtenstein)</td>
+</tr>
+<tr>
+<td>'1007'</td>
+<td>de-LU</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>German (Luxembourg)</td>
+<td>Deutsch (Luxemburg)</td>
+</tr>
+<tr>
+<td>'0807'</td>
+<td>de-CH</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'’'</td>
+<td>8217</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>German (Switzerland)</td>
+<td>Deutsch (Schweiz)</td>
+</tr>
+<tr>
+<td>'0008'</td>
+<td>el</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Greek</td>
+<td>Ελληνικά</td>
+</tr>
+<tr>
+<td>'0408'</td>
+<td>el-GR</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Greek (Greece)</td>
+<td>Ελληνικά (Ελλάδα)</td>
+</tr>
+<tr>
+<td>'0074'</td>
+<td>gn</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Guarani</td>
+<td>Avañe’ẽ</td>
+</tr>
+<tr>
+<td>'0474'</td>
+<td>gn-PY</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Guarani (Paraguay)</td>
+<td>Avañe’ẽ (Paraguái)</td>
+</tr>
+<tr>
+<td>'0047'</td>
+<td>gu</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yy</td>
+<td>ltr</td>
+<td>Gujarati</td>
+<td>ગુજરાતી</td>
+</tr>
+<tr>
+<td>'0447'</td>
+<td>gu-IN</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yy</td>
+<td>ltr</td>
+<td>Gujarati (India)</td>
+<td>ગુજરાતી (ભારત)</td>
+</tr>
+<tr>
+<td>'0068'</td>
+<td>ha</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Hausa</td>
+<td>Hausa</td>
+</tr>
+<tr>
+<td>'0468'</td>
+<td>ha-Latn-NG</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Hausa (Latin, Nigeria)</td>
+<td>Hausa (Najeriya)</td>
+</tr>
+<tr>
+<td>'7C68'</td>
+<td>ha-Latn</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Hausa (Latin)</td>
+<td>Hausa (Latin)</td>
+</tr>
+<tr>
+<td>'0075'</td>
+<td>haw</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Hawaiian</td>
+<td>ʻŌlelo Hawaiʻi</td>
+</tr>
+<tr>
+<td>'0475'</td>
+<td>haw-US</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Hawaiian (United States)</td>
+<td>ʻŌlelo Hawaiʻi (ʻAmelika Hui Pū ʻIa)</td>
+</tr>
+<tr>
+<td>'000D'</td>
+<td>he</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Hebrew</td>
+<td class="rtl">עברית</td>
+</tr>
+<tr>
+<td>'040D'</td>
+<td>he-IL</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Hebrew (Israel)</td>
+<td class="rtl">עברית (ישראל)</td>
+</tr>
+<tr>
+<td>'0039'</td>
+<td>hi</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Hindi</td>
+<td>हिन्दी</td>
+</tr>
+<tr>
+<td>'0439'</td>
+<td>hi-IN</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Hindi (India)</td>
+<td>हिन्दी (भारत)</td>
+</tr>
+<tr>
+<td>'000E'</td>
+<td>hu</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy. MM. dd.</td>
+<td>ltr</td>
+<td>Hungarian</td>
+<td>magyar</td>
+</tr>
+<tr>
+<td>'040E'</td>
+<td>hu-HU</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy. MM. dd.</td>
+<td>ltr</td>
+<td>Hungarian (Hungary)</td>
+<td>magyar (Magyarország)</td>
+</tr>
+<tr>
+<td>'0069'</td>
+<td>ibb</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Ibibio</td>
+<td>Ibibio-Efik</td>
+</tr>
+<tr>
+<td>'0469'</td>
+<td>ibb-NG</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Ibibio (Nigeria)</td>
+<td>Ibibio-Efik (Nigeria)</td>
+</tr>
+<tr>
+<td>'000F'</td>
+<td>is</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy</td>
+<td>ltr</td>
+<td>Icelandic</td>
+<td>íslenska</td>
+</tr>
+<tr>
+<td>'040F'</td>
+<td>is-IS</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy</td>
+<td>ltr</td>
+<td>Icelandic (Iceland)</td>
+<td>íslenska (Ísland)</td>
+</tr>
+<tr>
+<td>'0070'</td>
+<td>ig</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Igbo</td>
+<td>Asụsụ Igbo</td>
+</tr>
+<tr>
+<td>'0470'</td>
+<td>ig-NG</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Igbo (Nigeria)</td>
+<td>Asụsụ Igbo (Naịjịrịa)</td>
+</tr>
+<tr>
+<td>'0021'</td>
+<td>id</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h.mm.ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Indonesian</td>
+<td>Indonesia</td>
+</tr>
+<tr>
+<td>'0421'</td>
+<td>id-ID</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h.mm.ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Indonesian (Indonesia)</td>
+<td>Indonesia (Indonesia)</td>
+</tr>
+<tr>
+<td>'005D'</td>
+<td>iu</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/MM/yyyy</td>
+<td>ltr</td>
+<td>Inuktitut</td>
+<td>Inuktitut</td>
+</tr>
+<tr>
+<td>'085D'</td>
+<td>iu-Latn-CA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/MM/yyyy</td>
+<td>ltr</td>
+<td>Inuktitut (Latin, Canada)</td>
+<td>Inuktitut (Kanatami)</td>
+</tr>
+<tr>
+<td>'7C5D'</td>
+<td>iu-Latn</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/MM/yyyy</td>
+<td>ltr</td>
+<td>Inuktitut (Latin)</td>
+<td>Inuktitut (Qaliujaaqpait)</td>
+</tr>
+<tr>
+<td>'045D'</td>
+<td>iu-Cans-CA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss:ff</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Inuktitut (Syllabics, Canada)</td>
+<td>ᐃᓄᒃᑎᑐᑦ (ᑲᓇᑕᒥ)</td>
+</tr>
+<tr>
+<td>'785D'</td>
+<td>iu-Cans</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss:ff</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Inuktitut (Syllabics)</td>
+<td>ᐃᓄᒃᑎᑐᑦ (ᖃᓂᐅᔮᖅᐸᐃᑦ)</td>
+</tr>
+<tr>
+<td>'003C'</td>
+<td>ga</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Irish</td>
+<td>Gaeilge</td>
+</tr>
+<tr>
+<td>'083C'</td>
+<td>ga-IE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Irish (Ireland)</td>
+<td>Gaeilge (Éire)</td>
+</tr>
+<tr>
+<td>'0034'</td>
+<td>xh</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>isiXhosa</td>
+<td>isiXhosa</td>
+</tr>
+<tr>
+<td>'0434'</td>
+<td>xh-ZA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>isiXhosa (South Africa)</td>
+<td>isiXhosa (eMzantsi Afrika)</td>
+</tr>
+<tr>
+<td>'0035'</td>
+<td>zu</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>M/d/yyyy</td>
+<td>ltr</td>
+<td>isiZulu</td>
+<td>isiZulu</td>
+</tr>
+<tr>
+<td>'0435'</td>
+<td>zu-ZA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>M/d/yyyy</td>
+<td>ltr</td>
+<td>isiZulu (South Africa)</td>
+<td>isiZulu (iNingizimu Afrika)</td>
+</tr>
+<tr>
+<td>'0010'</td>
+<td>it</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Italian</td>
+<td>italiano</td>
+</tr>
+<tr>
+<td>'0410'</td>
+<td>it-IT</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Italian (Italy)</td>
+<td>italiano (Italia)</td>
+</tr>
+<tr>
+<td>'0810'</td>
+<td>it-CH</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'’'</td>
+<td>8217</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Italian (Switzerland)</td>
+<td>italiano (Svizzera)</td>
+</tr>
+<tr>
+<td>'0011'</td>
+<td>ja</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy/MM/dd</td>
+<td>ja-JP</td>
+<td>Japanese</td>
+<td>日本語</td>
+</tr>
+<tr>
+<td>'0411'</td>
+<td>ja-JP</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy/MM/dd</td>
+<td>ja-JP</td>
+<td>Japanese (Japan)</td>
+<td>日本語 (日本)</td>
+</tr>
+<tr>
+<td>'0086'</td>
+<td>quc</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>K'iche'</td>
+<td>K'iche'</td>
+</tr>
+<tr>
+<td>'7C86'</td>
+<td>quc-Latn</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>K'iche'</td>
+<td>K'iche'</td>
+</tr>
+<tr>
+<td>'0486'</td>
+<td>quc-Latn-GT</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>K'iche' (Guatemala)</td>
+<td>K'iche' (Guatemala)</td>
+</tr>
+<tr>
+<td>'006F'</td>
+<td>kl</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss:fff</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Kalaallisut</td>
+<td>kalaallisut</td>
+</tr>
+<tr>
+<td>'046F'</td>
+<td>kl-GL</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss:fff</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Kalaallisut (Greenland)</td>
+<td>kalaallisut (Kalaallit Nunaat)</td>
+</tr>
+<tr>
+<td>'004B'</td>
+<td>kn</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yy</td>
+<td>ltr</td>
+<td>Kannada</td>
+<td>ಕನ್ನಡ</td>
+</tr>
+<tr>
+<td>'044B'</td>
+<td>kn-IN</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yy</td>
+<td>ltr</td>
+<td>Kannada (India)</td>
+<td>ಕನ್ನಡ (ಭಾರತ)</td>
+</tr>
+<tr>
+<td>'0071'</td>
+<td>kr</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Kanuri</td>
+<td>Kanuri</td>
+</tr>
+<tr>
+<td>'0471'</td>
+<td>kr-Latn-NG</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Kanuri (Nigeria)</td>
+<td>Kanuri (Nigeria)</td>
+</tr>
+<tr>
+<td>'0060'</td>
+<td>ks</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>M/d/yyyy</td>
+<td>rtl</td>
+<td>Kashmiri</td>
+<td class="rtl">کٲشُر</td>
+</tr>
+<tr>
+<td>'0860'</td>
+<td>ks-Deva-IN</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Kashmiri (Devanagari)</td>
+<td>कॉशुर</td>
+</tr>
+<tr>
+<td>'0460'</td>
+<td>ks-Arab</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>M/d/yyyy</td>
+<td>rtl</td>
+<td>Kashmiri (Perso-Arabic)</td>
+<td class="rtl">کٲشُر (اَربی)</td>
+</tr>
+<tr>
+<td>'1000'</td>
+<td>ks-Arab-IN</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>M/d/yyyy</td>
+<td>rtl</td>
+<td>Kashmiri (Perso-Arabic)</td>
+<td class="rtl">کٲشُر (اَربی)</td>
+</tr>
+<tr>
+<td>'003F'</td>
+<td>kk</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Kazakh</td>
+<td>қазақ тілі</td>
+</tr>
+<tr>
+<td>'043F'</td>
+<td>kk-KZ</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Kazakh (Kazakhstan)</td>
+<td>қазақ тілі (Қазақстан)</td>
+</tr>
+<tr>
+<td>'0053'</td>
+<td>km</td>
+<td>- n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yy</td>
+<td>ltr</td>
+<td>Khmer</td>
+<td>ខ្មែរ</td>
+</tr>
+<tr>
+<td>'0453'</td>
+<td>km-KH</td>
+<td>- n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yy</td>
+<td>ltr</td>
+<td>Khmer (Cambodia)</td>
+<td>ខ្មែរ (កម្ពុជា)</td>
+</tr>
+<tr>
+<td>'0087'</td>
+<td>rw</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Kinyarwanda</td>
+<td>Kinyarwanda</td>
+</tr>
+<tr>
+<td>'0487'</td>
+<td>rw-RW</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Kinyarwanda (Rwanda)</td>
+<td>Kinyarwanda (U Rwanda)</td>
+</tr>
+<tr>
+<td>'0041'</td>
+<td>sw</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Kiswahili</td>
+<td>Kiswahili</td>
+</tr>
+<tr>
+<td>'0441'</td>
+<td>sw-KE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Kiswahili (Kenya)</td>
+<td>Kiswahili (Kenya)</td>
+</tr>
+<tr>
+<td>'0057'</td>
+<td>kok</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Konkani</td>
+<td>कोंकणी</td>
+</tr>
+<tr>
+<td>'0457'</td>
+<td>kok-IN</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Konkani (India)</td>
+<td>कोंकणी (भारत)</td>
+</tr>
+<tr>
+<td>'0012'</td>
+<td>ko</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ja-JP</td>
+<td>Korean</td>
+<td>한국어</td>
+</tr>
+<tr>
+<td>'0412'</td>
+<td>ko-KR</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ja-JP</td>
+<td>Korean (Korea)</td>
+<td>한국어(대한민국)</td>
+</tr>
+<tr>
+<td>'0040'</td>
+<td>ky</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Kyrgyz</td>
+<td>кыргызча</td>
+</tr>
+<tr>
+<td>'0440'</td>
+<td>ky-KG</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Kyrgyz (Kyrgyzstan)</td>
+<td>кыргызча (Кыргызстан)</td>
+</tr>
+<tr>
+<td>'0054'</td>
+<td>lo</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Lao</td>
+<td>ລາວ</td>
+</tr>
+<tr>
+<td>'0454'</td>
+<td>lo-LA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Lao (Laos)</td>
+<td>ລາວ (ລາວ)</td>
+</tr>
+<tr>
+<td>'0076'</td>
+<td>la</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Latin</td>
+<td>lingua latīna</td>
+</tr>
+<tr>
+<td>'0476'</td>
+<td>la-001</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Latin (World)</td>
+<td>lingua latīna (World)</td>
+</tr>
+<tr>
+<td>'0026'</td>
+<td>lv</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Latvian</td>
+<td>latviešu</td>
+</tr>
+<tr>
+<td>'0426'</td>
+<td>lv-LV</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Latvian (Latvia)</td>
+<td>latviešu (Latvija)</td>
+</tr>
+<tr>
+<td>'0027'</td>
+<td>lt</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Lithuanian</td>
+<td>lietuvių</td>
+</tr>
+<tr>
+<td>'0427'</td>
+<td>lt-LT</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Lithuanian (Lithuania)</td>
+<td>lietuvių (Lietuva)</td>
+</tr>
+<tr>
+<td>'7C2E'</td>
+<td>dsb</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d. M. yyyy</td>
+<td>ltr</td>
+<td>Lower Sorbian</td>
+<td>dolnoserbšćina</td>
+</tr>
+<tr>
+<td>'082E'</td>
+<td>dsb-DE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d. M. yyyy</td>
+<td>ltr</td>
+<td>Lower Sorbian (Germany)</td>
+<td>dolnoserbšćina (Nimska)</td>
+</tr>
+<tr>
+<td>'006E'</td>
+<td>lb</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd.MM.yy</td>
+<td>ltr</td>
+<td>Luxembourgish</td>
+<td>Lëtzebuergesch</td>
+</tr>
+<tr>
+<td>'046E'</td>
+<td>lb-LU</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd.MM.yy</td>
+<td>ltr</td>
+<td>Luxembourgish (Luxembourg)</td>
+<td>Lëtzebuergesch (Lëtzebuerg)</td>
+</tr>
+<tr>
+<td>'002F'</td>
+<td>mk</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.M.yyyy</td>
+<td>ltr</td>
+<td>Macedonian</td>
+<td>македонски</td>
+</tr>
+<tr>
+<td>'042F'</td>
+<td>mk-MK</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.M.yyyy</td>
+<td>ltr</td>
+<td>Macedonian (North Macedonia)</td>
+<td>македонски (Северна Македонија)</td>
+</tr>
+<tr>
+<td>'003E'</td>
+<td>ms</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/MM/yyyy</td>
+<td>ltr</td>
+<td>Malay</td>
+<td>Melayu</td>
+</tr>
+<tr>
+<td>'083E'</td>
+<td>ms-BN</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/MM/yyyy</td>
+<td>ltr</td>
+<td>Malay (Brunei)</td>
+<td>Melayu (Brunei)</td>
+</tr>
+<tr>
+<td>'043E'</td>
+<td>ms-MY</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/MM/yyyy</td>
+<td>ltr</td>
+<td>Malay (Malaysia)</td>
+<td>Melayu (Malaysia)</td>
+</tr>
+<tr>
+<td>'004C'</td>
+<td>ml</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Malayalam</td>
+<td>മലയാളം</td>
+</tr>
+<tr>
+<td>'044C'</td>
+<td>ml-IN</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Malayalam (India)</td>
+<td>മലയാളം (ഇന്ത്യ)</td>
+</tr>
+<tr>
+<td>'003A'</td>
+<td>mt</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Maltese</td>
+<td>Malti</td>
+</tr>
+<tr>
+<td>'043A'</td>
+<td>mt-MT</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Maltese (Malta)</td>
+<td>Malti (Malta)</td>
+</tr>
+<tr>
+<td>'0058'</td>
+<td>mni</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Manipuri</td>
+<td>মৈতৈলোন্</td>
+</tr>
+<tr>
+<td>'0458'</td>
+<td>mni-IN</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Manipuri (India)</td>
+<td>মৈতৈলোন্ (India)</td>
+</tr>
+<tr>
+<td>'0081'</td>
+<td>mi</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Maori</td>
+<td>te reo Māori</td>
+</tr>
+<tr>
+<td>'0481'</td>
+<td>mi-NZ</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Maori (New Zealand)</td>
+<td>te reo Māori (Aotearoa)</td>
+</tr>
+<tr>
+<td>'007A'</td>
+<td>arn</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Mapuche</td>
+<td>Mapudungun</td>
+</tr>
+<tr>
+<td>'047A'</td>
+<td>arn-CL</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Mapuche (Chile)</td>
+<td>Mapudungun (Chile)</td>
+</tr>
+<tr>
+<td>'004E'</td>
+<td>mr</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Marathi</td>
+<td>मराठी</td>
+</tr>
+<tr>
+<td>'044E'</td>
+<td>mr-IN</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Marathi (India)</td>
+<td>मराठी (भारत)</td>
+</tr>
+<tr>
+<td>'007C'</td>
+<td>moh</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>M/d/yyyy</td>
+<td>ltr</td>
+<td>Mohawk</td>
+<td>Kanien’kéha</td>
+</tr>
+<tr>
+<td>'047C'</td>
+<td>moh-CA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>M/d/yyyy</td>
+<td>ltr</td>
+<td>Mohawk (Mohawk)</td>
+<td>Kanien'kéha</td>
+</tr>
+<tr>
+<td>'0050'</td>
+<td>mn</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy.MM.dd</td>
+<td>ltr</td>
+<td>Mongolian</td>
+<td>Монгол&nbsp;хэл</td>
+</tr>
+<tr>
+<td>'7850'</td>
+<td>mn-Cyrl</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy.MM.dd</td>
+<td>ltr</td>
+<td>Mongolian</td>
+<td>Монгол&nbsp;хэл (Кирилл үсэг)</td>
+</tr>
+<tr>
+<td>'0450'</td>
+<td>mn-MN</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy.MM.dd</td>
+<td>ltr</td>
+<td>Mongolian (Mongolia)</td>
+<td>монгол (Монгол)</td>
+</tr>
+<tr>
+<td>'0850'</td>
+<td>mn-Mong-CN</td>
+<td>-n</td>
+<td>3</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>vert</td>
+<td>Mongolian (Traditional Mongolian, China)</td>
+<td>ᠮᠣᠩᠭᠣᠤᠯ ᠬᠡᠯᠡ (ᠪᠦᠭᠦᠳᠡ ᠨᠠᠢᠷᠠᠮᠳᠠᠬᠤ ᠳᠤᠮᠳᠠᠳᠤ ᠠᠷᠠᠳ ᠣᠯᠣᠰ)</td>
+</tr>
+<tr>
+<td>'0C50'</td>
+<td>mn-Mong-MN</td>
+<td>-n</td>
+<td>3</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>vert</td>
+<td>Mongolian (Traditional Mongolian, Mongolia)</td>
+<td>ᠮᠣᠩᠭᠣᠯ ᠬᠡᠯᠡ (ᠮᠣᠩᠭᠣᠯ ᠣᠯᠣᠰ)</td>
+</tr>
+<tr>
+<td>'7C50'</td>
+<td>mn-Mong</td>
+<td>-n</td>
+<td>3</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>vert</td>
+<td>Mongolian (Traditional Mongolian)</td>
+<td>ᠮᠣᠩᠭᠣᠤᠯ ᠬᠡᠯᠡ (ᠮᠣᠩᠭᠣᠤᠯ ᠬᠡᠯᠡ)</td>
+</tr>
+<tr>
+<td>'0061'</td>
+<td>ne</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>M/d/yyyy</td>
+<td>ltr</td>
+<td>Nepali</td>
+<td>नेपाली</td>
+</tr>
+<tr>
+<td>'0861'</td>
+<td>ne-IN</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>ltr</td>
+<td>Nepali (India)</td>
+<td>नेपाली (भारत)</td>
+</tr>
+<tr>
+<td>'0461'</td>
+<td>ne-NP</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>M/d/yyyy</td>
+<td>ltr</td>
+<td>Nepali (Nepal)</td>
+<td>नेपाली (नेपाल)</td>
+</tr>
+<tr>
+<td>'003B'</td>
+<td>se</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Northern Sami</td>
+<td>davvisámegiella</td>
+</tr>
+<tr>
+<td>'0014'</td>
+<td>no</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Norwegian</td>
+<td>norsk</td>
+</tr>
+<tr>
+<td>'7C14'</td>
+<td>nb</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Norwegian Bokmål</td>
+<td>norsk bokmål</td>
+</tr>
+<tr>
+<td>'0414'</td>
+<td>nb-NO</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Norwegian Bokmål (Norway)</td>
+<td>norsk bokmål (Norge)</td>
+</tr>
+<tr>
+<td>'7814'</td>
+<td>nn</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Norwegian Nynorsk</td>
+<td>nynorsk</td>
+</tr>
+<tr>
+<td>'0814'</td>
+<td>nn-NO</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Norwegian Nynorsk (Norway)</td>
+<td>nynorsk (Noreg)</td>
+</tr>
+<tr>
+<td>'0082'</td>
+<td>oc</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Occitan</td>
+<td>Occitan</td>
+</tr>
+<tr>
+<td>'0482'</td>
+<td>oc-FR</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Occitan (France)</td>
+<td>Occitan (França)</td>
+</tr>
+<tr>
+<td>'0048'</td>
+<td>or</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yy</td>
+<td>ltr</td>
+<td>Odia</td>
+<td>ଓଡ଼ିଆ</td>
+</tr>
+<tr>
+<td>'0448'</td>
+<td>or-IN</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yy</td>
+<td>ltr</td>
+<td>Odia (India)</td>
+<td>ଓଡ଼ିଆ (ଭାରତ)</td>
+</tr>
+<tr>
+<td>'0072'</td>
+<td>om</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Oromo</td>
+<td>Oromoo</td>
+</tr>
+<tr>
+<td>'0472'</td>
+<td>om-ET</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Oromo (Ethiopia)</td>
+<td>Oromoo (Itoophiyaa)</td>
+</tr>
+<tr>
+<td>'0079'</td>
+<td>pap</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d-M-yyyy</td>
+<td>ltr</td>
+<td>Papiamento</td>
+<td>Papiamentu</td>
+</tr>
+<tr>
+<td>'0479'</td>
+<td>pap-029</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d-M-yyyy</td>
+<td>ltr</td>
+<td>Papiamento (Caribbean)</td>
+<td>Papiamentu (Caribbean)</td>
+</tr>
+<tr>
+<td>'0063'</td>
+<td>ps</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>rtl</td>
+<td>Pashto</td>
+<td class="rtl">پښتو</td>
+</tr>
+<tr>
+<td>'0463'</td>
+<td>ps-AF</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>rtl</td>
+<td>Pashto (Afghanistan)</td>
+<td class="rtl">پښتو (افغانستان)</td>
+</tr>
+<tr>
+<td>'0029'</td>
+<td>fa</td>
+<td>n-</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'/'</td>
+<td>47</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Persian</td>
+<td class="rtl">فارسی</td>
+</tr>
+<tr>
+<td>'0429'</td>
+<td>fa-IR</td>
+<td>n-</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'/'</td>
+<td>47</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Persian (Iran)</td>
+<td class="rtl">فارسی (ایران)</td>
+</tr>
+<tr>
+<td>'0015'</td>
+<td>pl</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Polish</td>
+<td>polski</td>
+</tr>
+<tr>
+<td>'0415'</td>
+<td>pl-PL</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Polish (Poland)</td>
+<td>polski (Polska)</td>
+</tr>
+<tr>
+<td>'0016'</td>
+<td>pt</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Portuguese</td>
+<td>português</td>
+</tr>
+<tr>
+<td>'0416'</td>
+<td>pt-BR</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Portuguese (Brazil)</td>
+<td>português (Brasil)</td>
+</tr>
+<tr>
+<td>'0816'</td>
+<td>pt-PT</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Portuguese (Portugal)</td>
+<td>português (Portugal)</td>
+</tr>
+<tr>
+<td>'05FE'</td>
+<td>qps-ploca</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy/MM/dd</td>
+<td>ltr</td>
+<td>Pseudo (Pseudo Asia)</td>
+<td>[Ρšēŭďõ ₤áηğűãĝè (Þ§эūðò Αśĩä) !!! !!! ]</td>
+</tr>
+<tr>
+<td>'09FF'</td>
+<td>qps-plocm</td>
+<td>n-</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr*</td>
+<td>Pseudo (Pseudo Mirrored)</td>
+<td>[Þ§ėΰðό £äπĝúаğę (Рŝéûďб Μίяřóŗ℮ď) !!! !!! !]</td>
+</tr>
+<tr>
+<td>'0901'</td>
+<td>qps-Latn-x-sh</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Pseudo (Pseudo Selfhost)</td>
+<td>Pśęüďό Sęłfhóšť</td>
+</tr>
+<tr>
+<td>'0501'</td>
+<td>qps-ploc</td>
+<td>-n</td>
+<td>4;0</td>
+<td>',,'</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h::mm::ss</td>
+<td>d/MM/yy</td>
+<td>ltr</td>
+<td>Pseudo (Pseudo)</td>
+<td>[Þšéųδô (Ρŝέũδθ) !!! !!]</td>
+</tr>
+<tr>
+<td>'0046'</td>
+<td>pa</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yy</td>
+<td>ltr</td>
+<td>Punjabi</td>
+<td>ਪੰਜਾਬੀ</td>
+</tr>
+<tr>
+<td>'7C46'</td>
+<td>pa-Arab</td>
+<td>- n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yy</td>
+<td>rtl</td>
+<td>Punjabi</td>
+<td class="rtl">پنجابی</td>
+</tr>
+<tr>
+<td>'0446'</td>
+<td>pa-IN</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yy</td>
+<td>ltr</td>
+<td>Punjabi (India)</td>
+<td>ਪੰਜਾਬੀ (ਭਾਰਤ)</td>
+</tr>
+<tr>
+<td>'0846'</td>
+<td>pa-Arab-PK</td>
+<td>- n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yy</td>
+<td>rtl</td>
+<td>Punjabi (Pakistan)</td>
+<td class="rtl">پنجابی (پاکستان)</td>
+</tr>
+<tr>
+<td>'006B'</td>
+<td>quz</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Quechua</td>
+<td>Runasimi</td>
+</tr>
+<tr>
+<td>'046B'</td>
+<td>quz-BO</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Quechua (Bolivia)</td>
+<td>Runasimi (Bolivia)</td>
+</tr>
+<tr>
+<td>'086B'</td>
+<td>quz-EC</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Quechua (Ecuador)</td>
+<td>Runasimi (Ecuador)</td>
+</tr>
+<tr>
+<td>'0C6B'</td>
+<td>quz-PE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Quechua (Peru)</td>
+<td>Runasimi (Perú)</td>
+</tr>
+<tr>
+<td>'0018'</td>
+<td>ro</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Romanian</td>
+<td>română</td>
+</tr>
+<tr>
+<td>'0818'</td>
+<td>ro-MD</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Romanian (Moldova)</td>
+<td>română (Republica Moldova)</td>
+</tr>
+<tr>
+<td>'0418'</td>
+<td>ro-RO</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Romanian (Romania)</td>
+<td>română (România)</td>
+</tr>
+<tr>
+<td>'0017'</td>
+<td>rm</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'’'</td>
+<td>8217</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Romansh</td>
+<td>rumantsch</td>
+</tr>
+<tr>
+<td>'0417'</td>
+<td>rm-CH</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'’'</td>
+<td>8217</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Romansh (Switzerland)</td>
+<td>rumantsch (Svizra)</td>
+</tr>
+<tr>
+<td>'0019'</td>
+<td>ru</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Russian</td>
+<td>русский</td>
+</tr>
+<tr>
+<td>'0819'</td>
+<td>ru-MD</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Russian (Moldova)</td>
+<td>русский (Молдова)</td>
+</tr>
+<tr>
+<td>'0419'</td>
+<td>ru-RU</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Russian (Russia)</td>
+<td>русский (Россия)</td>
+</tr>
+<tr>
+<td>'0085'</td>
+<td>sah</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Sakha</td>
+<td>Саха</td>
+</tr>
+<tr>
+<td>'0485'</td>
+<td>sah-RU</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Sakha (Russia)</td>
+<td>Саха (Россия)</td>
+</tr>
+<tr>
+<td>'703B'</td>
+<td>smn</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy</td>
+<td>ltr</td>
+<td>Sami (Inari)</td>
+<td>anarâškielâ</td>
+</tr>
+<tr>
+<td>'7C3B'</td>
+<td>smj</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Sami (Lule)</td>
+<td>julevusámegiella</td>
+</tr>
+<tr>
+<td>'743B'</td>
+<td>sms</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy</td>
+<td>ltr</td>
+<td>Sami (Skolt)</td>
+<td>sää´mǩiõll</td>
+</tr>
+<tr>
+<td>'783B'</td>
+<td>sma</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Sami (Southern)</td>
+<td>åarjelsaemiengïele</td>
+</tr>
+<tr>
+<td>'243B'</td>
+<td>smn-FI</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy</td>
+<td>ltr</td>
+<td>Sami, Inari (Finland)</td>
+<td>anarâškielâ (Suomâ)</td>
+</tr>
+<tr>
+<td>'103B'</td>
+<td>smj-NO</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Sami, Lule (Norway)</td>
+<td>julevusámegiella (Vuodna)</td>
+</tr>
+<tr>
+<td>'143B'</td>
+<td>smj-SE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Sami, Lule (Sweden)</td>
+<td>julevusámegiella (Svierik)</td>
+</tr>
+<tr>
+<td>'0C3B'</td>
+<td>se-FI</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy</td>
+<td>ltr</td>
+<td>Sami, Northern (Finland)</td>
+<td>davvisámegiella (Suopma)</td>
+</tr>
+<tr>
+<td>'043B'</td>
+<td>se-NO</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Sami, Northern (Norway)</td>
+<td>davvisámegiella (Norga)</td>
+</tr>
+<tr>
+<td>'083B'</td>
+<td>se-SE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Sami, Northern (Sweden)</td>
+<td>davvisámegiella (Ruoŧŧa)</td>
+</tr>
+<tr>
+<td>'203B'</td>
+<td>sms-FI</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy</td>
+<td>ltr</td>
+<td>Sami, Skolt (Finland)</td>
+<td>sää´mǩiõll (Lää´ddjânnam)</td>
+</tr>
+<tr>
+<td>'183B'</td>
+<td>sma-NO</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Sami, Southern (Norway)</td>
+<td>åarjelsaemiengïele (Nöörje)</td>
+</tr>
+<tr>
+<td>'1C3B'</td>
+<td>sma-SE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Sami, Southern (Sweden)</td>
+<td>åarjelsaemiengïele (Sveerje)</td>
+</tr>
+<tr>
+<td>'004F'</td>
+<td>sa</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Sanskrit</td>
+<td>संस्कृत</td>
+</tr>
+<tr>
+<td>'044F'</td>
+<td>sa-IN</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Sanskrit (India)</td>
+<td>संस्कृत (भारतम्)</td>
+</tr>
+<tr>
+<td>'0091'</td>
+<td>gd</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Scottish Gaelic</td>
+<td>Gàidhlig</td>
+</tr>
+<tr>
+<td>'0491'</td>
+<td>gd-GB</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Scottish Gaelic (United Kingdom)</td>
+<td>Gàidhlig (An Rìoghachd Aonaichte)</td>
+</tr>
+<tr>
+<td>'7C1A'</td>
+<td>sr</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy.</td>
+<td>ltr</td>
+<td>Serbian</td>
+<td>srpski</td>
+</tr>
+<tr>
+<td>'1C1A'</td>
+<td>sr-Cyrl-BA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy.</td>
+<td>ltr</td>
+<td>Serbian (Cyrillic, Bosnia and Herzegovina)</td>
+<td>српски (Босна и Херцеговина)</td>
+</tr>
+<tr>
+<td>'301A'</td>
+<td>sr-Cyrl-ME</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy.</td>
+<td>ltr</td>
+<td>Serbian (Cyrillic, Montenegro)</td>
+<td>српски (Црна Гора)</td>
+</tr>
+<tr>
+<td>'0C1A'</td>
+<td>sr-Cyrl-CS</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy.</td>
+<td>ltr</td>
+<td>Serbian (Cyrillic, Serbia and Montenegro (Forme$</td>
+<td>српски (Србија и Црна Гора (Бивша))</td>
+</tr>
+<tr>
+<td>'281A'</td>
+<td>sr-Cyrl-RS</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy.</td>
+<td>ltr</td>
+<td>Serbian (Cyrillic, Serbia)</td>
+<td>српски (Србија)</td>
+</tr>
+<tr>
+<td>'6C1A'</td>
+<td>sr-Cyrl</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy.</td>
+<td>ltr</td>
+<td>Serbian (Cyrillic)</td>
+<td>српски (Ћирилица)</td>
+</tr>
+<tr>
+<td>'181A'</td>
+<td>sr-Latn-BA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy.</td>
+<td>ltr</td>
+<td>Serbian (Latin, Bosnia &amp; Herzegovina)</td>
+<td>srpski (Bosna i Hercegovina)</td>
+</tr>
+<tr>
+<td>'2C1A'</td>
+<td>sr-Latn-ME</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy.</td>
+<td>ltr</td>
+<td>Serbian (Latin, Montenegro)</td>
+<td>srpski (Crna Gora)</td>
+</tr>
+<tr>
+<td>'081A'</td>
+<td>sr-Latn-CS</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy.</td>
+<td>ltr</td>
+<td>Serbian (Latin, Serbia and Montenegro (Former))</td>
+<td>srpski (Srbija i Crna Gora (Bivša))</td>
+</tr>
+<tr>
+<td>'241A'</td>
+<td>sr-Latn-RS</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy.</td>
+<td>ltr</td>
+<td>Serbian (Latin, Serbia)</td>
+<td>srpski (Srbija)</td>
+</tr>
+<tr>
+<td>'701A'</td>
+<td>sr-Latn</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy.</td>
+<td>ltr</td>
+<td>Serbian (Latin)</td>
+<td>srpski (latinica)</td>
+</tr>
+<tr>
+<td>'0030'</td>
+<td>st</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Sesotho</td>
+<td>Sesotho</td>
+</tr>
+<tr>
+<td>'0430'</td>
+<td>st-ZA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Sesotho (South Africa)</td>
+<td>Sesotho (South Africa)</td>
+</tr>
+<tr>
+<td>'006C'</td>
+<td>nso</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Sesotho sa Leboa</td>
+<td>Sesotho sa Leboa</td>
+</tr>
+<tr>
+<td>'046C'</td>
+<td>nso-ZA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Sesotho sa Leboa (South Africa)</td>
+<td>Sesotho sa Leboa (Afrika Borwa)</td>
+</tr>
+<tr>
+<td>'0032'</td>
+<td>tn</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Setswana</td>
+<td>Setswana</td>
+</tr>
+<tr>
+<td>'0832'</td>
+<td>tn-BW</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Setswana (Botswana)</td>
+<td>Setswana (Botswana)</td>
+</tr>
+<tr>
+<td>'0432'</td>
+<td>tn-ZA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Setswana (South Africa)</td>
+<td>Setswana (Aforika Borwa)</td>
+</tr>
+<tr>
+<td>'0059'</td>
+<td>sd</td>
+<td>n-</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Sindhi</td>
+<td class="rtl">سنڌي</td>
+</tr>
+<tr>
+<td>'7C59'</td>
+<td>sd-Arab</td>
+<td>n-</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Sindhi</td>
+<td class="rtl">سنڌي</td>
+</tr>
+<tr>
+<td>'0459'</td>
+<td>sd-Deva-IN</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Sindhi (Devanagari, India)</td>
+<td>सिन्धी (India)</td>
+</tr>
+<tr>
+<td>'0859'</td>
+<td>sd-Arab-PK</td>
+<td>n-</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Sindhi (Pakistan)</td>
+<td class="rtl">سنڌي (پاکستان)</td>
+</tr>
+<tr>
+<td>'005B'</td>
+<td>si</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h.mm.ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Sinhala</td>
+<td>සිංහල</td>
+</tr>
+<tr>
+<td>'045B'</td>
+<td>si-LK</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h.mm.ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Sinhala (Sri Lanka)</td>
+<td>සිංහල (ශ්‍රී ලංකාව)</td>
+</tr>
+<tr>
+<td>'001B'</td>
+<td>sk</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d. M. yyyy</td>
+<td>ltr</td>
+<td>Slovak</td>
+<td>slovenčina</td>
+</tr>
+<tr>
+<td>'041B'</td>
+<td>sk-SK</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d. M. yyyy</td>
+<td>ltr</td>
+<td>Slovak (Slovakia)</td>
+<td>slovenčina (Slovensko)</td>
+</tr>
+<tr>
+<td>'0024'</td>
+<td>sl</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d. MM. yyyy</td>
+<td>ltr</td>
+<td>Slovenian</td>
+<td>slovenščina</td>
+</tr>
+<tr>
+<td>'0424'</td>
+<td>sl-SI</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d. MM. yyyy</td>
+<td>ltr</td>
+<td>Slovenian (Slovenia)</td>
+<td>slovenščina (Slovenija)</td>
+</tr>
+<tr>
+<td>'0077'</td>
+<td>so</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Somali</td>
+<td>Soomaali</td>
+</tr>
+<tr>
+<td>'0477'</td>
+<td>so-SO</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Somali (Somalia)</td>
+<td>Soomaali (Soomaaliya)</td>
+</tr>
+<tr>
+<td>'000A'</td>
+<td>es</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Spanish</td>
+<td>español</td>
+</tr>
+<tr>
+<td>'2C0A'</td>
+<td>es-AR</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Argentina)</td>
+<td>español (Argentina)</td>
+</tr>
+<tr>
+<td>'400A'</td>
+<td>es-BO</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Bolivia)</td>
+<td>español (Bolivia)</td>
+</tr>
+<tr>
+<td>'340A'</td>
+<td>es-CL</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Spanish (Chile)</td>
+<td>español (Chile)</td>
+</tr>
+<tr>
+<td>'240A'</td>
+<td>es-CO</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/MM/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Colombia)</td>
+<td>español (Colombia)</td>
+</tr>
+<tr>
+<td>'140A'</td>
+<td>es-CR</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Costa Rica)</td>
+<td>español (Costa Rica)</td>
+</tr>
+<tr>
+<td>'5C0A'</td>
+<td>es-CU</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Cuba)</td>
+<td>español (Cuba)</td>
+</tr>
+<tr>
+<td>'1C0A'</td>
+<td>es-DO</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Dominican Republic)</td>
+<td>español (República Dominicana)</td>
+</tr>
+<tr>
+<td>'300A'</td>
+<td>es-EC</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Ecuador)</td>
+<td>español (Ecuador)</td>
+</tr>
+<tr>
+<td>'440A'</td>
+<td>es-SV</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Spanish (El Salvador)</td>
+<td>español (El Salvador)</td>
+</tr>
+<tr>
+<td>'100A'</td>
+<td>es-GT</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/MM/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Guatemala)</td>
+<td>español (Guatemala)</td>
+</tr>
+<tr>
+<td>'480A'</td>
+<td>es-HN</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Honduras)</td>
+<td>español (Honduras)</td>
+</tr>
+<tr>
+<td>'580A'</td>
+<td>es-419</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Latin America)</td>
+<td>español (Latinoamérica)</td>
+</tr>
+<tr>
+<td>'080A'</td>
+<td>es-MX</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Mexico)</td>
+<td>español (México)</td>
+</tr>
+<tr>
+<td>'4C0A'</td>
+<td>es-NI</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Nicaragua)</td>
+<td>español (Nicaragua)</td>
+</tr>
+<tr>
+<td>'180A'</td>
+<td>es-PA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>MM/dd/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Panama)</td>
+<td>español (Panamá)</td>
+</tr>
+<tr>
+<td>'3C0A'</td>
+<td>es-PY</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Paraguay)</td>
+<td>español (Paraguay)</td>
+</tr>
+<tr>
+<td>'280A'</td>
+<td>es-PE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/MM/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Peru)</td>
+<td>español (Perú)</td>
+</tr>
+<tr>
+<td>'500A'</td>
+<td>es-PR</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>MM/dd/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Puerto Rico)</td>
+<td>español (Puerto Rico)</td>
+</tr>
+<tr>
+<td>'0C0A'</td>
+<td>es-ES</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Spain, International Sort)</td>
+<td>español (España, alfabetización internacional)</td>
+</tr>
+<tr>
+<td>'040A'</td>
+<td>es-ES_tradnl</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Spain, Traditional Sort)</td>
+<td>español (España, alfabetización tradicional)</td>
+</tr>
+<tr>
+<td>'540A'</td>
+<td>es-US</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>M/d/yyyy</td>
+<td>ltr</td>
+<td>Spanish (United States)</td>
+<td>español (Estados Unidos)</td>
+</tr>
+<tr>
+<td>'380A'</td>
+<td>es-UY</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Uruguay)</td>
+<td>español (Uruguay)</td>
+</tr>
+<tr>
+<td>'200A'</td>
+<td>es-VE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Spanish (Venezuela)</td>
+<td>español (Venezuela)</td>
+</tr>
+<tr>
+<td>'001D'</td>
+<td>sv</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Swedish</td>
+<td>svenska</td>
+</tr>
+<tr>
+<td>'081D'</td>
+<td>sv-FI</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Swedish (Finland)</td>
+<td>svenska (Finland)</td>
+</tr>
+<tr>
+<td>'041D'</td>
+<td>sv-SE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Swedish (Sweden)</td>
+<td>svenska (Sverige)</td>
+</tr>
+<tr>
+<td>'0084'</td>
+<td>gsw</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'’'</td>
+<td>8217</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Swiss German</td>
+<td>Schwiizertüütsch</td>
+</tr>
+<tr>
+<td>'005A'</td>
+<td>syr</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Syriac</td>
+<td class="rtl">ܣܘܪܝܝܐ</td>
+</tr>
+<tr>
+<td>'045A'</td>
+<td>syr-SY</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Syriac (Syria)</td>
+<td class="rtl">ܣܘܪܝܝܐ (ܣܘܪܝܐ)</td>
+</tr>
+<tr>
+<td>'0028'</td>
+<td>tg</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Tajik</td>
+<td>Тоҷикӣ</td>
+</tr>
+<tr>
+<td>'0428'</td>
+<td>tg-Cyrl-TJ</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Tajik (Cyrillic, Tajikistan)</td>
+<td>тоҷикӣ (Тоҷикистон)</td>
+</tr>
+<tr>
+<td>'7C28'</td>
+<td>tg-Cyrl</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Tajik (Cyrillic)</td>
+<td>Тоҷикӣ (Кирилликӣ)</td>
+</tr>
+<tr>
+<td>'0049'</td>
+<td>ta</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Tamil</td>
+<td>தமிழ்</td>
+</tr>
+<tr>
+<td>'0449'</td>
+<td>ta-IN</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>hh:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Tamil (India)</td>
+<td>தமிழ் (இந்தியா)</td>
+</tr>
+<tr>
+<td>'0849'</td>
+<td>ta-LK</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Tamil (Sri Lanka)</td>
+<td>தமிழ் (இலங்கை)</td>
+</tr>
+<tr>
+<td>'0044'</td>
+<td>tt</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Tatar</td>
+<td>Татар</td>
+</tr>
+<tr>
+<td>'0444'</td>
+<td>tt-RU</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Tatar (Russia)</td>
+<td>Татар (Россия)</td>
+</tr>
+<tr>
+<td>'004A'</td>
+<td>te</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Telugu</td>
+<td>తెలుగు</td>
+</tr>
+<tr>
+<td>'044A'</td>
+<td>te-IN</td>
+<td>-n</td>
+<td>3;2;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Telugu (India)</td>
+<td>తెలుగు (భారతదేశం)</td>
+</tr>
+<tr>
+<td>'001E'</td>
+<td>th</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Thai</td>
+<td>ไทย</td>
+</tr>
+<tr>
+<td>'041E'</td>
+<td>th-TH</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Thai (Thailand)</td>
+<td>ไทย (ไทย)</td>
+</tr>
+<tr>
+<td>'0051'</td>
+<td>bo</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>ltr</td>
+<td>Tibetan</td>
+<td>བོད་ཡིག</td>
+</tr>
+<tr>
+<td>'0451'</td>
+<td>bo-CN</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>ltr</td>
+<td>Tibetan (China)</td>
+<td>བོད་ཡིག (ཀྲུང་ཧྭ་མི་དམངས་སྤྱི་མཐུན་རྒྱལ་ཁབ།)</td>
+</tr>
+<tr>
+<td>'0073'</td>
+<td>ti</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Tigrinya</td>
+<td>ትግርኛ</td>
+</tr>
+<tr>
+<td>'0873'</td>
+<td>ti-ER</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Tigrinya (Eritrea)</td>
+<td>ትግርኛ (ኤርትራ)</td>
+</tr>
+<tr>
+<td>'0473'</td>
+<td>ti-ET</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Tigrinya (Ethiopia)</td>
+<td>ትግርኛ (ኢትዮጵያ)</td>
+</tr>
+<tr>
+<td>'001F'</td>
+<td>tr</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.MM.yyyy</td>
+<td>ltr</td>
+<td>Turkish</td>
+<td>Türkçe</td>
+</tr>
+<tr>
+<td>'041F'</td>
+<td>tr-TR</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.MM.yyyy</td>
+<td>ltr</td>
+<td>Turkish (Türkiye)</td>
+<td>Türkçe (Türkiye)</td>
+</tr>
+<tr>
+<td>'0042'</td>
+<td>tk</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd.MM.yy 'ý.'</td>
+<td>ltr</td>
+<td>Turkmen</td>
+<td>Türkmen dili</td>
+</tr>
+<tr>
+<td>'0442'</td>
+<td>tk-TM</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd.MM.yy 'ý.'</td>
+<td>ltr</td>
+<td>Turkmen (Turkmenistan)</td>
+<td>Türkmen dili (Türkmenistan)</td>
+</tr>
+<tr>
+<td>'0022'</td>
+<td>uk</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Ukrainian</td>
+<td>українська</td>
+</tr>
+<tr>
+<td>'0422'</td>
+<td>uk-UA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd.MM.yyyy</td>
+<td>ltr</td>
+<td>Ukrainian (Ukraine)</td>
+<td>українська (Україна)</td>
+</tr>
+<tr>
+<td>'002E'</td>
+<td>hsb</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy</td>
+<td>ltr</td>
+<td>Upper Sorbian</td>
+<td>hornjoserbšćina</td>
+</tr>
+<tr>
+<td>'042E'</td>
+<td>hsb-DE</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d.M.yyyy</td>
+<td>ltr</td>
+<td>Upper Sorbian (Germany)</td>
+<td>hornjoserbšćina (Němska)</td>
+</tr>
+<tr>
+<td>'0020'</td>
+<td>ur</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Urdu</td>
+<td class="rtl">اُردو</td>
+</tr>
+<tr>
+<td>'0820'</td>
+<td>ur-IN</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yy</td>
+<td>rtl</td>
+<td>Urdu (India)</td>
+<td class="rtl">اردو (بھارت)</td>
+</tr>
+<tr>
+<td>'0420'</td>
+<td>ur-PK</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Urdu (Pakistan)</td>
+<td class="rtl">اُردو (پاکستان)</td>
+</tr>
+<tr>
+<td>'0080'</td>
+<td>ug</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy-M-d</td>
+<td>rtl</td>
+<td>Uyghur</td>
+<td class="rtl">ئۇيغۇرچە</td>
+</tr>
+<tr>
+<td>'0480'</td>
+<td>ug-CN</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy-M-d</td>
+<td>rtl</td>
+<td>Uyghur (China)</td>
+<td class="rtl">ئۇيغۇرچە (جۇڭخۇا خەلق جۇمھۇرىيىتى)</td>
+</tr>
+<tr>
+<td>'0043'</td>
+<td>uz</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Uzbek</td>
+<td>o‘zbek</td>
+</tr>
+<tr>
+<td>'0843'</td>
+<td>uz-Cyrl-UZ</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Uzbek (Cyrillic, Uzbekistan)</td>
+<td>ўзбекча (Ўзбекистон)</td>
+</tr>
+<tr>
+<td>'7843'</td>
+<td>uz-Cyrl</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Uzbek (Cyrillic)</td>
+<td>Ўзбек (Кирил)</td>
+</tr>
+<tr>
+<td>'0443'</td>
+<td>uz-Latn-UZ</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Uzbek (Latin, Uzbekistan)</td>
+<td>o‘zbek (Oʻzbekiston)</td>
+</tr>
+<tr>
+<td>'7C43'</td>
+<td>uz-Latn</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Uzbek (Latin)</td>
+<td>o‘zbek</td>
+</tr>
+<tr>
+<td>'0803'</td>
+<td>ca-ES-valencia</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Valencian (Spain)</td>
+<td>valencià (Espanya)</td>
+</tr>
+<tr>
+<td>'0033'</td>
+<td>ve</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Venda</td>
+<td>Tshivenḓa</td>
+</tr>
+<tr>
+<td>'0433'</td>
+<td>ve-ZA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Venda (South Africa)</td>
+<td>Tshivenḓa (South Africa)</td>
+</tr>
+<tr>
+<td>'002A'</td>
+<td>vi</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Vietnamese</td>
+<td>Tiếng Việt</td>
+</tr>
+<tr>
+<td>'042A'</td>
+<td>vi-VN</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Vietnamese (Vietnam)</td>
+<td>Tiếng Việt (Việt Nam)</td>
+</tr>
+<tr>
+<td>'0052'</td>
+<td>cy</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Welsh</td>
+<td>Cymraeg</td>
+</tr>
+<tr>
+<td>'0452'</td>
+<td>cy-GB</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Welsh (United Kingdom)</td>
+<td>Cymraeg (Y Deyrnas Unedig)</td>
+</tr>
+<tr>
+<td>'0062'</td>
+<td>fy</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Western Frisian</td>
+<td>Frysk</td>
+</tr>
+<tr>
+<td>'0462'</td>
+<td>fy-NL</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'.'</td>
+<td>46</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>dd-MM-yyyy</td>
+<td>ltr</td>
+<td>Western Frisian (Netherlands)</td>
+<td>Frysk (Nederlân)</td>
+</tr>
+<tr>
+<td>'0088'</td>
+<td>wo</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Wolof</td>
+<td>Wolof</td>
+</tr>
+<tr>
+<td>'0488'</td>
+<td>wo-SN</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>hh:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>ltr</td>
+<td>Wolof (Senegal)</td>
+<td>Wolof (Senegaal)</td>
+</tr>
+<tr>
+<td>'0031'</td>
+<td>ts</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Xitsonga</td>
+<td>Xitsonga</td>
+</tr>
+<tr>
+<td>'0431'</td>
+<td>ts-ZA</td>
+<td>-n</td>
+<td>3;0</td>
+<td>'&nbsp;'</td>
+<td>160</td>
+<td>','</td>
+<td>44</td>
+<td>h:mm:ss</td>
+<td>yyyy-MM-dd</td>
+<td>ltr</td>
+<td>Xitsonga (South Africa)</td>
+<td>Xitsonga (South Africa)</td>
+</tr>
+<tr>
+<td>'0078'</td>
+<td>ii</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>ltr</td>
+<td>Yi</td>
+<td>ꆈꌠꁱꂷ</td>
+</tr>
+<tr>
+<td>'0478'</td>
+<td>ii-CN</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>yyyy/M/d</td>
+<td>ltr</td>
+<td>Yi (China)</td>
+<td>ꆈꌠꁱꂷ (ꍏꉸꏓꂱꇭꉼꇩ)</td>
+</tr>
+<tr>
+<td>'003D'</td>
+<td>yi</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Yiddish</td>
+<td class="rtl">ייִדיש</td>
+</tr>
+<tr>
+<td>'043D'</td>
+<td>yi-001</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>dd/MM/yyyy</td>
+<td>rtl</td>
+<td>Yiddish (World)</td>
+<td class="rtl">ייִדיש (וועלט)</td>
+</tr>
+<tr>
+<td>'006A'</td>
+<td>yo</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Yoruba</td>
+<td>Èdè Yorùbá</td>
+</tr>
+<tr>
+<td>'046A'</td>
+<td>yo-NG</td>
+<td>-n</td>
+<td>3;0</td>
+<td>','</td>
+<td>44</td>
+<td>'.'</td>
+<td>46</td>
+<td>h:mm:ss</td>
+<td>d/M/yyyy</td>
+<td>ltr</td>
+<td>Yoruba (Nigeria)</td>
+<td>Èdè Yorùbá (Orilẹ̀-èdè Nàìjíríà)</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+
+      </div>
+
+
+
+
+
+
+
+
+
+    </body></html>
