@@ -9,8 +9,8 @@ Thank you for helping make someone’s app feel native!
 
 ### Rules (very short)
 
-- Never change the _key_ - anything to the left of `=`
-- Never change _variable_ - words inside `%percent signs%`
+- Never change the *key* - anything to the left of `=`
+- Never change *variable* - words inside `%percent signs%`
 - `&` = set access key (underlined letter). Choose a letter that isn’t used yet in the same window.
 - `\t` inside menu items = keyboard shortcut (e.g. `&Save\tCtrl+S`)
 - `\n` = force a new line

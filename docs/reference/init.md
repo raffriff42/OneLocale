@@ -1,4 +1,4 @@
-﻿# OneLocale_Init() - setup
+﻿## OneLocale_Init(): Setup
 
 ```autohotkey
 locale_info := OneLocale_Init(optional_args := "")
@@ -31,3 +31,5 @@ if !locale_info.success {
 | `mapPriority`  | true      | Baked maps win over loose .lang files |
 
 The doc comments are extensive.
+
+Back to [README](../../README.md)

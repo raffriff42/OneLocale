@@ -1,7 +1,7 @@
 # OneLocale — Simple, powerful i18n for AutoHotkey v2
 
 [![License](https://img.shields.io/badge/License-LGPL%202.1-blue.svg)](https://opensource.org/license/lgpl-2.1)
-[![AutoHotkey v2](https://img.shields.io/badge/AutoHotkey-v2-green.svg)]()
+[![AutoHotkey v2](https://img.shields.io/badge/AutoHotkey-v2-green.svg)](https://www.autohotkey.com/)
 
 <img src="docs/assets/OneLocale-Earth_icon_2-x128c.png" align="right" width="128" height="128"/>
 
@@ -25,32 +25,31 @@
 ; MyScript.ahk
 #Requires AutoHotkey v2.0
 #Include lib/OneLocale.ahk
-
 S_VERSION := "1.0"
-
-locale_info := OneLocale_Init()                 ; reads MyScript.ini → best language
-if !locale_info.success {
-    MsgBox locale_info.errmsg, , "Icon!"
+locale_info := OneLocale_Init() ; reads MyScript.ini → picks best language
+if (!locale_info.success) {
+    MsgBox(locale_info.errmsg, , "icon!")
     ExitApp
 }
+G := Gui("-MaximizeBox -MinimizeBox")
+G.Title := sT("gui", "title", "/My Cool App v%ver%", {ver:S_VERSION})
 
-G := Gui("-SysMenu")
-G.Title := sT("gui", "title", "/My Cool App v%ver%", {ver: S_VERSION})
+G.Add("Text", "x16 w400 r9", sT("welcome", "[section]"))
+    .SetFont("s10")
 
-G.AddButton("x50 w100", sT("gui", "btn_save", "/&Save"))
-    .OnEvent("Click", (*) => MsgBox "Saved!")
-G.AddButton("x50 w100 yp", sT("gui", "btn_quit", "/&Quit"))
+G.Add("Button", "x314 w100 Default", sT("gui", "btn_quit", "/&Quit"))
     .OnEvent("Click", (*) => ExitApp())
 
-SB := G.AddStatusBar()
+SB := G.Add("StatusBar", "vStatus1")
 SB.SetText(sT("status", "ready", "/Ready"))
 
-G.Show("w200 Center")
+G.Show("w430 center")
 return
 ```
 
 ```ini
-; MyScript.ini (optional – leave empty for auto-detect)
+; MyScript.ini
+; (optional – leave empty for auto-detect)
 [general]
 ;language = de
 ```
@@ -59,8 +58,14 @@ return
 ;MyScript-[en].lang
 [gui]
 title = My Cool App v%ver%
-btn_save = &Save
-btn_quit = &Quit
+btn_quit = &OK
+
+[welcome]
+OneLocale provides an easier way to support multiple user-interface \w
+languages in AutoHotkey.\n
+Even if you don’t plan to support multiple languages, the way OneLocale \w
+helps distinguish user-interface text from other string literals in \w
+your code is valuable for code maintenance.
 
 [status]
 ready = Ready
@@ -70,8 +75,14 @@ ready = Ready
 ;MyScript-[de].lang
 [gui]
 title    = Mein Cooles Programm v%ver%
-btn_save = &Speichern
 btn_quit = &Beenden
+
+[welcome]
+OneLocale macht die Unterstützung mehrerer Sprachen für die \w
+Benutzeroberfläche in AutoHotkey deutlich einfacher.\n
+Selbst wenn Sie keine Mehrsprachigkeit planen, ist die Art und Weise, \w
+wie OneLocale Text für die Oberfläche von anderen Zeichenketten im \w
+Code klar abgrenzt, äußerst wertvoll für die Wartbarkeit Ihres Programms.
 
 [status]
 ready    = Bereit
@@ -84,9 +95,14 @@ Now drop `OneLocale.ahk` in a \lib subfolder, and put `MyScript-[en].lang` and `
 
 ## Full Documentation
 
-- [Reference](./docs/reference/) → `OneLocale_Init()`, `sT()`, Dialog, Baker…
-- [Notes for Translators](./docs/reference/translator-notes.md) → everything a translator needs
-- [Baking languages into the .exe](./docs/reference/baker.md) → (zero external files)
+- Reference
+  - Setting up - [OneLocale_Init()](./docs/reference/init.md)
+  - String lookup & format – [sT()](./docs/reference/st.md)
+  - [Language Chooser Dialog](./docs/reference/chooser.md)
+  - [Baking languages into the .exe](./docs/reference/baker.md) (zero external files)
+
+- [Notes for Translators](./docs/reference/translator-notes.md)
+- [Complete Beginner-Friendly Introduction](./docs/OneLocale-Introduction.md) (20 min read)
 
 ## Why people love it (quietly)
 

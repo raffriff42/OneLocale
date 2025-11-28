@@ -1,7 +1,7 @@
-﻿# sT() – translation lookup
+﻿## sT() – translation lookup
 
 ```ahk
-translated := sT(section, key, default := "ERROR", args := "", langPath := "")
+message := sT(section, key, default := "ERROR", args := "", langPath := "")
 ```
 
 Looks up a string in the active language file and does variable expansion.
@@ -9,16 +9,32 @@ Looks up a string in the active language file and does variable expansion.
 #### Examples
 
 ```autohotkey
-sT("gui", "title", "/My App v%ver%", {ver:"2.0"})
-; -> returns “My App v2.0” (or the translated version)
+;MyScript.ahk
+MyGui.Title := sT("gui", "title", "/My App v%ver%", {ver:"2.0"})
 
-sT("errors", "bad_path", "/File not found - %path%", {path:name})
-; -> returns (if language = German)
-; bad_path: file_not_found – Datei ‚readme.txt‘ wurde nicht gefunden.”
-;(the key is shown verbatim only in the special [errors] section)
+MyGui.Add("Edit", "w400 r6", sT("welcome", "[section]"))
 
-sT("messages", "welcome", "[section]")
-; special syntax – returns the ENTIRE "welcome" section (multi-line)
+MsgBox sT("errors", "bad_path", "/File not found - %path%", {path:name})
+
+```
+
+```ini
+;MyScript-[en].lang
+[gui]
+title = My App v%ver%
+
+[welcome]
+OneLocale provides an easier way to support multiple user-interface \w
+languages in AutoHotkey.\n
+Even if you don’t plan to support multiple languages, the way OneLocale \w
+helps distinguish user-interface text from other string literals in \w
+your code is valuable for code maintenance.
+
+; in the special [errors] section, the key is shown verbatim
+; before the translated message
+[errors]
+bad_path = File not found - %path%
+
 ```
 
 #### Special sequences understood everywhere
@@ -37,3 +53,5 @@ Standard AutoHotkey backtick escapes are allowed too.
 Save `.lang` files as *UTF-16-LE with BOM* – that’s the only encoding that works reliably.
 
 There's much more in the doc comments.
+
+Back to [README](../../README.md)
