@@ -85,7 +85,7 @@ Now drop `OneLocale.ahk` in a \lib subfolder, and put `MyScript-[en].lang` and `
 ## Full Documentation
 
 - [Reference](./docs/reference/) → `OneLocale_Init()`, `sT()`, Dialog, Baker…
-- [Notes for Translators](./docs/translator-notes.md) → everything a translator needs
+- [Notes for Translators](./docs/reference/translator-notes.md) → everything a translator needs
 - [Baking languages into the .exe](./docs/reference/baker.md) → (zero external files)
 
 ## Why people love it (quietly)
