@@ -24,6 +24,7 @@ This is a resriction of all `.ini` files - a `.lang` file *IS* a type of `.ini` 
 
 - Never change a *key* - anything to the left of '`=`'.
 - Never change a *variable* - words inside `%percent signs%`
+- When we talk about a *Section* we mean a part beginning with a `[section heading]`
 
 ### Formatting
 
@@ -31,7 +32,7 @@ This is a resriction of all `.ini` files - a `.lang` file *IS* a type of `.ini` 
   - Choose an appropriate key for your language
   - Make them unique within a menu, if possible
 - '`\n`' forces a new line
-- Anything after '`\z`' is a comment for you and will never appear to the user
+- Anything after '`\z`' is a comment and will never appear to the user
   - Maybe a comment to you, to give helpful context.
   - Maybe a comment *from* you to the developer or the next translator.
 - To show a literal '`%`', write '`\%`'.
@@ -76,11 +77,9 @@ If your shortened translation sacrifices important meaning, you can explain furt
 
 #### Multi-line sections
 
-Multi-line sections look different because they don't have '`=`' on every line like normal sections.
-Multi-line text *should* be labeled with a comment - something like:
-`; • Entire section should be translated`
+Multi-line sections look different because they don't have '`=`' on every line like normal sections. Multi-line text *should* be labeled with a comment - something like: `; • Entire section should be translated` - but many times they aren't.
 
-- The entire section should be translated.
+- The entire section should be translated (except  `%variables%`)
 - Indent text with '`\t`'.
 - Blank lines are ignored on input; use '`\n`' if you need an empty line on output.
 - Remove line breaks (allow word wrap) with `\w` at the start or end of line
@@ -102,7 +101,7 @@ and attach a copy of these Notes.
 
 A good AI will give you a near-perfect file in seconds. You only need to skim for tone.
 
-(Yes, this is how most new translations will happen from now on.) 😀
+(Yes, this is how most translations will happen from now on.) 😀
 
 – the OneLocale team (and Grok says hi)
 
