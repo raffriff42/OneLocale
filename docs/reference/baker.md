@@ -17,3 +17,5 @@ Your script runs the source to build a 'baked' (map tree) database.
 6. `sT` transparently gets the translated text from the best source available - file or map.
 
 Result: your compiled .exe contains **all translations** – nothing to ship separately, and no read-permission problems on restricted systems.
+
+Back to [README](../../README.md)
