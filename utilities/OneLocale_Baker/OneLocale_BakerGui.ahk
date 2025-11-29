@@ -53,6 +53,7 @@ SetTitleMatchMode(2) ; contains
 #Include "..\..\lib\OneLocale_Baker.ahk"
 #Include "..\lib\ControlEnable.ahk"
 #Include "..\lib\FileUtils.ahk"
+#Include "..\lib\IniFiles.ahk"
 #Include "..\lib\StringUtils.ahk"
 #Include "..\lib\ToolTips.ahk"
 
@@ -718,27 +719,6 @@ ShowStatus(msg, icon:=0)
         SB.SetText(" " g_StatText, 1, 0)
     }
     return
-}
-
-/**************************************************
- * #### IniWriteSection: write entire section
- *
- * @param {String} sPath - full path of .INI file;
- * if it does not exist, it will be created
- *
- * @param {String} sSection - section name within .INI file;
- * the heading that appears in square brackets (do not include the brackets)
- *
- * @param {String} sValue - value to be written
- */
-IniWriteSection(sPath, sSection, sValue)
-{
-    try {
-        IniDelete sPath, sSection
-        Sleep(100)
-        IniWrite sValue, sPath, sSection
-    }
-    return true
 }
 
 ; (end)

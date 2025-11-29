@@ -79,17 +79,12 @@ S_VERSION := "1.4"
 ; - Set the globals listed below.
 ;
 if (1) {
-    ; (normal init with non-default document location and filename)
-    locale_info := OneLocale_Init(
-                    { sDocsFolder:"..\_lib\docs"
-                    , sDocName:"OneLocale-readme-[/TAG/]" })
+    ; (normal ini)
+    locale_info := OneLocale_Init()
 }
 else {
-    ; (init for case of alternate .LANG folder and baked code above commented out)
-    locale_info := OneLocale_Init(
-                    { sLangFolder:"lang_load"
-                    , sDocsFolder:"..\_lib\docs"
-                    , sDocName:"OneLocale-readme-[/TAG/]" })
+    ; (init for case of alternate .LANG folder and commented baked code #Include)
+    locale_info := OneLocale_Init({ sLangFolder:"lang_load" })
 }
 if (!locale_info.success) {
     MsgBox(locale_info.errmsg, S_TITLE, "icon!")
@@ -174,11 +169,11 @@ BuildGui()
     ctl.OnEvent("Click", BtnQuit)
 
     FileMenu := Menu()
-    G.mnu_lang := sT("menu", "language" , "/&Language...`tCtrl+L")
+    G.mnu_lang := sT("menu", "language" , "/&Language...\tCtrl+L")
     FileMenu.Add(G.mnu_lang, MnuHandler)
-    G.mnu_test := sT("menu", "file_test", "/&Error test`tCtrl+E")
+    G.mnu_test := sT("menu", "file_test", "/&Error test\tCtrl+E")
     FileMenu.Add(G.mnu_test, MnuHandler)
-    G.mnu_quit := sT("menu", "file_quit", "/&Quit`tCtrl+Q")
+    G.mnu_quit := sT("menu", "file_quit", "/&Quit\tCtrl+Q")
     FileMenu.Add ; ----- separator
     FileMenu.Add(G.mnu_quit, MnuHandler)
 
@@ -279,7 +274,7 @@ BtnError(*)
     ; (very useful if the .lang file was independently user-created)
     ;//////////////////////////////////////////////////////////////////
 
-    msg := sT("errors", "bad_path", , {path:"C:\AUTOEXE.NULL"})
+    msg := sT("errors", "bad_path", , {path:"C:\no\such\file.null"})
     MsgBox msg, S_TITLE, "icon!"
     return
 }
@@ -290,7 +285,7 @@ BtnHelp(*)
 {
     global Gmain
     Gmain["Choose1"].Focus() ; move focus off the Help button after use
-    local cmd := "open `"" g_docs_path "`""
+    local cmd := "open https://onelocale.dev/"
     Run(cmd)
     return
 }
