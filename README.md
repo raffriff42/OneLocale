@@ -78,7 +78,7 @@ wait  = Wait
 
 ```
 
-- By the way, an AI such as **Grok** can do a great job translating these files, once they have the [cheat sheet](./docs/reference/translator-notes.md).
+- By the way, an AI, like **Grok**, can do a great job of translating, once they have the [Notes for Translators](./docs/reference/translator-notes.md).
 
 ```dosini
 ;MyScript-[de].lang
@@ -108,7 +108,7 @@ Now drop `OneLocale.ahk` in a \lib subfolder, and put `MyScript-[en].lang` and `
 - Reference
   - Setting up - [OneLocale_Init()](./docs/reference/init.md)
   - String lookup & format – [sT()](./docs/reference/st.md)
-  - [Language Chooser Dialog](./docs/reference/chooser.md)
+  - [Language Chooser Dialog](./docs/reference/dialog.md)
   - [Baking languages into the .exe](./docs/reference/baker.md) (zero external files)
 
 - [Notes for Translators](./docs/reference/translator-notes.md)
@@ -120,10 +120,12 @@ Now drop `OneLocale.ahk` in a \lib subfolder, and put `MyScript-[en].lang` and `
 - [OneLocale_Baker](/utilities/OneLocale_Baker/) turns .lang data into .ahk code.
 - [OneLocale_FindLangID](./utilities/OneLocale_FindLangID) finds ISO Tags by partial language names.
 
-## Why people love it (quietly)
+Browsing the source code of these apps should give you some ideas. All sample and demo code is public domain BTW, marked [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+
+## Why people love it
 
 There are a couple of i18n libraries floating around the forums right now.
-**OneLocale** simply gives you the most complete, v2-native feature set today — without drama, without legacy baggage, and with the cleanest developer + translator experience I could build.
+**OneLocale** simply gives you the most complete, v2-native feature set today — without drama, without legacy baggage, and with the cleanest developer + translator experience.
 
 That’s it.
 
@@ -136,13 +138,12 @@ Open an issue or PR — I usually reply the same day.
 
 ## License
 
-GNU Lesser General Public License v2.1 – use commercially, modify, ship in closed-source apps, no problem.
-Full text in [LICENSE](./LICENSE).
+GNU Lesser General Public License v2.1 – use commercially, modify, ship in closed-source apps, all no problem. Full text in [LICENSE](./LICENSE).
 
----
+## About
 
 OneLocale was first created in February 2023, and has been slowly refined as it was used in many of my personal projects.
 
-It is a complete rework of my 2013 __NetText__ [(sourceforge)](https://sourceforge.net/projects/nettext/), which was based on my 2011 __GetText__ [(sourceforge)](https://sourceforge.net/p/filesearchclassic/code/HEAD/tree/trunk/vb6/lindsaybigelow/GetText/), which was inspired by GNU’s 1995 __gettext__ [(gnu.org)](https://www.gnu.org/software/gettext/).
+I've been doing this class of software for awhile. OneLocale is a complete rework of my 2013 __NetText__ project [(sourceforge)](https://sourceforge.net/projects/nettext/) and there's other work going back a few years before that.
 
 -- [raffriff42](https://github.com/raffriff42)
