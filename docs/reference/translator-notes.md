@@ -12,11 +12,12 @@ This is a resriction of all `.ini` files - a `.lang` file *IS* a type of `.ini` 
   - `MyScript-[en].lang` would be saved as
   - `MyScript-[fr].lang`
 
-Basic language tags are listed at [List of ISO 639-1 Codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (Wikipedia)
-All 436 valid language tags are listed in this [Microsoft Document](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) (scroll down to Table 2)
-👉 It's easiest to use [OneLocale_FindLangID](../../utilities/OneLocale_FindLangID/) to find valid language tags by partial language name.
+#### *Language tags*
 
-For example, entering "esp" lists all Spanish dialects:
+- Basic language tags are listed at [List of ISO 639-1 Codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (Wikipedia).
+- All 436 valid tags are listed in this [Microsoft Document](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) (scroll down to Table 2).
+
+👉 It's easiest to use [OneLocale_FindLangID](../../utilities/OneLocale_FindLangID/) to find tags by partial language name - for example, entering "spa" or "esp" below lists all Spanish dialects:
 ![OneLocale_FindLangID](../assets/OneLocale_FindLangID%202025-11-29%20038.png)
 
 ### Important Rules
@@ -58,9 +59,11 @@ See Microsoft’s [docs](https://learn.microsoft.com/en-us/globalization/input/h
   - Make them unique within a GUI window, if possible.
 - Unlike Menus, Gui elements like Buttons don't have hotkeys. The developer may have created workarounds for this: the easiest is to have a menu item duplicating the functionality of each Button.
 
-Watch out for translated strings becoming **too long to display properly**. Experiment. Run the app and see how it looks. Try to re-word your translation to make it fit in the space available. If your shortened translation sacrifices important meaning, you can add it back in the element's **Tooltip**, if it has one.
+Watch out for translated strings becoming **too long to display properly**. Experiment. Run the app and see how it looks. Try to re-word your translation to make it fit in the space available.
 
 As a rule of thumb, messages should be **no more than ~120% longer than the base language**, although this depends on how much room the developer gave you.
+
+If your shortened translation sacrifices important meaning, you can explain further in the element's **Tooltip**, if it has one.
 
 #### Tooltips
 
@@ -80,23 +83,24 @@ Multi-line text *should* be labeled with a comment - something like:
 - The entire section should be translated.
 - Indent text with '`\t`'.
 - Blank lines are ignored on input; use '`\n`' if you need an empty line on output.
-- Remove line breaks (allow word wrap) with `\w` at the start or end of line.
+- Remove line breaks (allow word wrap) with `\w` at the start or end of line
 - Pay attention to display limits - test often; discuss problems with the developer.
 
 #### Error messages
 
 - Length isn't as limited (200-300% longer than base language is okay)
 
----
-
 Questions? Open an issue on the GitHub repo – we’re friendly.
+
+---
 
 ### The 2025 way
 
-👉 Just give the entire .lang file into Grok / Claude / ChatGPT and say:
-“Translate this AutoHotkey OneLocale language file to German. Never touch keys or %variables%” - and attach a copy of these Notes.
+👉 Just give the entire .lang file to Grok / Claude / ChatGPT and say:
+*Translate this AutoHotkey OneLocale language file to German. Never touch keys or %variables%*
+and attach a copy of these Notes.
 
-A good AI will give you a near-perfect file in seconds. You only skim for tone.
+A good AI will give you a near-perfect file in seconds. You only need to skim for tone.
 
 (Yes, this is how most new translations will happen from now on.) 😀
 
