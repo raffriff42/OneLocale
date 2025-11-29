@@ -48,12 +48,16 @@ G.Show("w430 center")
 return
 ```
 
+- An .ini file - even an empty one - is required:
+
 ```dosini
 ; MyScript.ini
-; (optional – leave empty for auto-detect)
+; • 'language=' is optional – leave empty to auto-detect using A_Language
 [general]
 ;language = de
 ```
+
+- The .lang file format is very human-friendly. With its INI-like *section*, *key*, *value* format, each string comes with context to help the translator.
 
 ```dosini
 ;MyScript-[en].lang
@@ -70,7 +74,11 @@ your code is valuable for code maintenance.
 
 [status]
 ready = Ready
+wait  = Wait
+
 ```
+
+- By the way, an AI such as **Grok** can do a great job translating these files, once they have the [cheat sheet](./docs/reference/translator-notes.md).
 
 ```dosini
 ;MyScript-[de].lang
@@ -87,8 +95,9 @@ Code klar abgrenzt, äußerst wertvoll für die Wartbarkeit Ihres Programms.
 
 [status]
 ready    = Bereit
+wait     = Warten
 
-[notes]
+[general]
 translator = Grok
 ```
 
@@ -105,6 +114,12 @@ Now drop `OneLocale.ahk` in a \lib subfolder, and put `MyScript-[en].lang` and `
 - [Notes for Translators](./docs/reference/translator-notes.md)
 - [Complete Beginner-Friendly Introduction](./docs/OneLocale-Introduction.md) (20 min read)
 
+## Helper apps
+
+- [OneLocale_Demo](./utilities/OneLocale_Demo/) is a slightly biger demo with fully commented code.
+- [OneLocale_Baker](/utilities/OneLocale_Baker/) turns .lang data into .ahk code.
+- [OneLocale_FindLangID](./utilities/OneLocale_FindLangID) finds ISO Tags by partial language names.
+
 ## Why people love it (quietly)
 
 There are a couple of i18n libraries floating around the forums right now.
@@ -117,6 +132,8 @@ That’s it.
 Bug reports, translations, or just a “this saved me hours” are all very welcome ♥
 Open an issue or PR — I usually reply the same day.
 
+[AutoHotkey Community discussion](https://www.autohotkey.com/boards/viewtopic.php?f=83&t=139639)
+
 ## License
 
 GNU Lesser General Public License v2.1 – use commercially, modify, ship in closed-source apps, no problem.
@@ -124,4 +141,8 @@ Full text in [LICENSE](./LICENSE).
 
 ---
 
-Made with passion (since Feb 2023 → still going strong in 2025) by [raffriff42](https://github.com/raffriff42)
+OneLocale was first created in February 2023, and has been slowly refined as it was used in many of my personal projects.
+
+It is a complete rework of my 2013 __NetText__ [(sourceforge)](https://sourceforge.net/projects/nettext/), which was based on my 2011 __GetText__ [(sourceforge)](https://sourceforge.net/p/filesearchclassic/code/HEAD/tree/trunk/vb6/lindsaybigelow/GetText/), which was inspired by GNU’s 1995 __gettext__ [(gnu.org)](https://www.gnu.org/software/gettext/).
+
+-- [raffriff42](https://github.com/raffriff42)
