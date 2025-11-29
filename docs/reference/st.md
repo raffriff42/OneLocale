@@ -20,7 +20,7 @@ MsgBox sT("errors", "bad_path", "/File not found - %path%", {path:name})
 
 ```
 
-```ini
+```dosini
 ;MyScript-[en].lang
 [gui]
 title = My App v%ver%

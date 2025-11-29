@@ -48,14 +48,14 @@ G.Show("w430 center")
 return
 ```
 
-```ini
+```dosini
 ; MyScript.ini
 ; (optional – leave empty for auto-detect)
 [general]
 ;language = de
 ```
 
-```ini
+```dosini
 ;MyScript-[en].lang
 [gui]
 title = My Cool App v%ver%
@@ -72,7 +72,7 @@ your code is valuable for code maintenance.
 ready = Ready
 ```
 
-```ini
+```dosini
 ;MyScript-[de].lang
 [gui]
 title    = Mein Cooles Programm v%ver%
@@ -125,61 +125,3 @@ Full text in [LICENSE](./LICENSE).
 ---
 
 Made with passion (since Feb 2023 → still going strong in 2025) by [raffriff42](https://github.com/raffriff42)
-
-TEST
-
-```dosini
-;dosini
-[gui]
-title = My Cool App v%ver%
-btn_quit = &OK
-
-[welcome]
-OneLocale provides an easier way to support multiple user-interface \w
-languages in AutoHotkey.\n
-Even if you don’t plan to support multiple languages, the way OneLocale \w
-helps distinguish user-interface text from other string literals in \w
-your code is valuable for code maintenance.
-```
-
-```properties
-;properties
-[gui]
-title = My Cool App v%ver%
-btn_quit = &OK
-
-[welcome]
-OneLocale provides an easier way to support multiple user-interface \w
-languages in AutoHotkey.\n
-Even if you don’t plan to support multiple languages, the way OneLocale \w
-helps distinguish user-interface text from other string literals in \w
-your code is valuable for code maintenance.
-```
-
-```conf
-;conf
-[gui]
-title = My Cool App v%ver%
-btn_quit = &OK
-
-[welcome]
-OneLocale provides an easier way to support multiple user-interface \w
-languages in AutoHotkey.\n
-Even if you don’t plan to support multiple languages, the way OneLocale \w
-helps distinguish user-interface text from other string literals in \w
-your code is valuable for code maintenance.
-```
-
-```txt
-;txt
-[gui]
-title = My Cool App v%ver%
-btn_quit = &OK
-
-[welcome]
-OneLocale provides an easier way to support multiple user-interface \w
-languages in AutoHotkey.\n
-Even if you don’t plan to support multiple languages, the way OneLocale \w
-helps distinguish user-interface text from other string literals in \w
-your code is valuable for code maintenance.
-```

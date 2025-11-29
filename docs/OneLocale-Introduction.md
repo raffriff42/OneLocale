@@ -54,7 +54,7 @@ btn_Help.ToolTip := sT("tooltips", "btn_Help", "/View Readme in browser.")
 
 An English .LANG file might have these entries for this control:
 
-```ini
+```dosini
 ; MyScript-[en].lang
 [gui]
 btn_Help = &Help
@@ -65,7 +65,7 @@ btn_Help = View the Readme file.
 
 And a German .LANG file might have these entries:
 
-```ini
+```dosini
 ; MyScript-[de].lang
 [gui]
 btn_Help = &Helfen
@@ -105,7 +105,7 @@ FileMenu.Add(mnu_lang := sT("menu", "language", "/&Language...\tCtrl+L"), MenuHa
 
 The .LANG files might look like this:
 
-```ini
+```dosini
 ; MyScript-[en].lang
 [menu]
 language    = &Language...\tCtrl+L
@@ -113,7 +113,7 @@ file_test   = &Generate error message\tCtrl+E
 file_quit   = &Quit\tCtrl+Q
 ```
 
-```ini
+```dosini
 ; MyScript-[de].lang
 [menu]
 language    = &Sprache...\tCtrl+S
@@ -159,13 +159,13 @@ We’re using `sT()`’s fourth argument now - `args`, an [Object literal](https
 
 The .LANG files might look like this:
 
-```ini
+```dosini
 ; MyScript-[en].lang
 [errors]
 bad_path = The file '%path%' could not be found.
 ```
 
-```ini
+```dosini
 ; MyScript-[de].lang
 [errors]
 bad_path = Die Datei '%path%' konnte nicht gefunden werden.
@@ -239,7 +239,7 @@ The functions are listed below.
 
 Your script needs an .INI file. It probably has one already.  To make use of __OneLocale__, it requires the following section and entry:
 
-```ini
+```dosini
 ; MyScript.ini
 [general]
 language = (a Language ID)
@@ -390,7 +390,7 @@ ctlChk1 := G.Add("CheckBox",
         , sT("gui", "ctlChk1", "/&Option 1"))
 ```
 
-```ini
+```dosini
 ; MyScript-[en].lang
 [gui]
 ctlChk1 = &Option 1
@@ -400,7 +400,7 @@ ctlChk1 = &Option 1
 
 For messages with line breaks, you can insert `\n`’s as needed. However, longer messages get a bit unwieldy. For example (from something I’m working on):
 
-```ini
+```dosini
 ;; Long message method #1 - get key value
 [refresh]
 Failed = THERE MAY BE A PROBLEM: \n\n You requested %req_fps%Hz refresh rate, but actual \n refresh rate is %new_fps%Hz.
@@ -408,7 +408,7 @@ Failed = THERE MAY BE A PROBLEM: \n\n You requested %req_fps%Hz refresh rate, bu
 
 You may sometimes want to give those messages their own sections:
 
-```ini
+```dosini
 ;; Long message method #2 - get entire section
 [refresh_failed]
 THERE MAY BE A PROBLEM: \n
@@ -486,7 +486,7 @@ Note, some rephrasing and abbreviations are used to control length.
   - Make them unique within a GUI window, if possible
     (dialog boxes can re-use accelerators)
 
-```ini
+```dosini
 ; MyScript-[en].lang (INPUT)
 [gui]
 Prompt        = &Select new Resolution:
@@ -496,7 +496,7 @@ Button_Cancel = Cancel
 Post_Change   = Monitor %id% New Resolution %wid% x %hgt% @ %refresh%
 ```
 
-```ini
+```dosini
 ; MyScript-[fr].lang (OUTPUT)
 [gui]
 Prompt        = &Nouvelle résolution:
