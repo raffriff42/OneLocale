@@ -14,7 +14,7 @@ This is a resriction of all `.ini` files - a `.lang` file *IS* a type of `.ini` 
 
 Basic language tags are listed at [List of ISO 639-1 Codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (Wikipedia)
 All 436 valid language tags are listed in this [Microsoft Document](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) (scroll down to Table 2)
-:point_right: It's easiest to use [OneLocale_FindLangID](../../utilities/OneLocale_FindLangID/) to find valid language tags by partial language name.
+👉 It's easiest to use [OneLocale_FindLangID](../../utilities/OneLocale_FindLangID/) to find valid language tags by partial language name.
 
 For example, entering "esp" lists all Spanish dialects:
 ![OneLocale_FindLangID](../assets/OneLocale_FindLangID%202025-11-29%20038.png)
@@ -31,10 +31,10 @@ For example, entering "esp" lists all Spanish dialects:
   - Make them unique within a menu, if possible
 - '`\n`' forces a new line
 - Anything after '`\z`' is a comment for you and will never appear to the user
-  - Maybe a comment to you, to give helpful context
-  - Maybe a comment *from* you to the developer or the next translator
-- To show a literal '`%`', write '`\%`'
-- Ampersand ('`&`') sets the undelined *Accesss Key* (see below)
+  - Maybe a comment to you, to give helpful context.
+  - Maybe a comment *from* you to the developer or the next translator.
+- To show a literal '`%`', write '`\%`'.
+- Ampersand ('`&`') sets the underlined *Accesss Key* (see below)
 To show '`&`' without the underline, use '`&&`' (e.g. '`Cats && Dogs`)
 
 #### Menus
@@ -80,7 +80,7 @@ Multi-line text *should* be labeled with a comment - something like:
 - The entire section should be translated.
 - Indent text with '`\t`'.
 - Blank lines are ignored on input; use '`\n`' if you need an empty line on output.
-- Remove line breaks (allow word wrap) with `\w` at the start or end of line
+- Remove line breaks (allow word wrap) with `\w` at the start or end of line.
 - Pay attention to display limits - test often; discuss problems with the developer.
 
 #### Error messages
@@ -89,16 +89,16 @@ Multi-line text *should* be labeled with a comment - something like:
 
 ---
 
-Questions? Open an issue on the GitHub repo – we’re friendly
+Questions? Open an issue on the GitHub repo – we’re friendly.
 
 ### The 2025 way
 
-:point_right: Just paste the entire .lang file into Grok / Claude / ChatGPT and say:
-“Translate this AutoHotkey OneLocale language file to German. Follow the rules in the comments exactly. Never touch keys or %variables%.”
-Maybe attach a copy of these notes.
+👉 Just give the entire .lang file into Grok / Claude / ChatGPT and say:
+“Translate this AutoHotkey OneLocale language file to German. Never touch keys or %variables%” - and attach a copy of these Notes.
 
-They’ll give you a perfect file in seconds — then you only skim for tone.
-(Yes, this is how most new translations will happen from now on.) :smile:
+A good AI will give you a near-perfect file in seconds. You only skim for tone.
+
+(Yes, this is how most new translations will happen from now on.) 😀
 
 – the OneLocale team (and Grok says hi)
 
