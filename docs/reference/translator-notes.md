@@ -18,6 +18,7 @@ This is a resriction of all `.ini` files - a `.lang` file *IS* a type of `.ini` 
 - All 436 valid tags are listed in this [Microsoft Document](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) (scroll down to Table 2).
 
 👉 It's easiest to use [OneLocale_FindLangID](../../utilities/OneLocale_FindLangID/) to find tags by partial language name - for example, entering "spa" or "esp" below lists all Spanish dialects:
+
 ![OneLocale_FindLangID](../assets/OneLocale_FindLangID%202025-11-29%20038.png)
 
 ### Important Rules
