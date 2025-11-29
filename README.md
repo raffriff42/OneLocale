@@ -1,12 +1,14 @@
-# OneLocale — Simple, powerful i18n for AutoHotkey v2
+# OneLocale — simple, powerful i18n for AutoHotkey v2
 
 [![License](https://img.shields.io/badge/License-LGPL%202.1-blue.svg)](https://opensource.org/license/lgpl-2.1)
-[![AutoHotkey v2](https://img.shields.io/badge/AutoHotkey-v2-green.svg)](https://www.autohotkey.com/)
+![AutoHotkey v2](https://img.shields.io/badge/AutoHotkey-v2-green.svg)
+[![View on GitHub](https://img.shields.io/badge/View%20on%20GitHub-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/raffriff42/OneLocale)
 
-<img src="docs/assets/OneLocale-Earth_icon_2-x128c.png" align="right" width="128" height="128"/>
+<img src="docs/assets/OneLocale-Earth_icon_2-x128c.png" align="right" width="128" height="128" alt="OneLocale logo"/>
 
 **Write your GUI strings in plain English (or your language of choice) today — add translations tomorrow without touching your code again.**
 
+<img src="docs/assets/OneLocale-demo4L-ani.gif" alt="OneLocale in action" width="600"/>
 <img src="docs/assets/OneLocale-demo4L-ani.gif" alt="OneLocale in action" width="600"/>
 
 ### What you get
