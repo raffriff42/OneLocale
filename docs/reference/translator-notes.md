@@ -26,12 +26,12 @@ This is a resriction of all `.ini` files - a `.lang` file *IS* a type of `.ini` 
 - Never change a *key* - anything to the left of '`=`'.
 - Never change a *variable* - words inside `%percent signs%`
 - When we talk about a *Section* we mean a part beginning with a `[section heading]`
+- Parts of a .lang file shown below:
+
+![Parts of a .lang file](../assets/OneLocale-LANG-sample_labels.png)
 
 ### Formatting
 
-- '`&`' sets the *access key* (underlined letter, e.g. '`Save &As...`').
-  - Choose an appropriate key for your language
-  - Make them unique within a menu, if possible
 - '`\n`' forces a new line
 - Anything after '`\z`' is a comment and will never appear to the user
   - Maybe a comment to you, to give helpful context.
