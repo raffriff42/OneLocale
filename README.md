@@ -101,7 +101,7 @@ wait     = Warten
 translator = Grok
 ```
 
-Now drop `OneLocale.ahk` in a \lib subfolder, and put `MyScript-[en].lang` and `MyScript-[de].lang` in a \lang subfolder. Switch language instantly by editing the ini or using the included **chooser dialog** (not shown here, but seen in this [Demo](./examples/OneLocale_Demo))
+Now drop `OneLocale.ahk` in a \lib subfolder, and put `MyScript-[en].lang` and `MyScript-[de].lang` in a \lang subfolder. Switch language instantly by editing the ini or using the included **chooser dialog** (not shown here, but seen in this [Demo](./utilities/OneLocale_Demo/))
 
 ## Full Documentation
 
