@@ -6,7 +6,7 @@ By [raffriff42](https://github.com/raffriff42)
 
 ![OneLocale logo](assets/OneLocale-Earth_icon_2-x128c.png)
 
-Open Source under GNU Lesser General Public License - see [LEGAL](#legal) section.
+Open Source under GNU Lesser General Public License — see [LEGAL](#legal) section.
 _This page updated 2025-11-30_
 
 <!-- [TOC] -->
@@ -29,7 +29,7 @@ Even if you don’t plan to support multiple languages, the way __OneLocale__ he
 
 Here are some examples to get us started:
 
-### Example 1 - Adding a Button
+### Example 1: Adding a Button
 
 Here’s a sample script fragment adding a Button:
 
@@ -83,7 +83,7 @@ The Button text will depend on which .LANG file is loaded.
 
 …and obviously, the tooltip will work the same way.
 
-### Example 2 - Adding a Menu Item
+### Example 2: Adding a Menu Item
 
 Here’s a sample script fragment adding a Menu item:
 
@@ -137,7 +137,7 @@ ___Note___
   - Accelerator keys are keyboard shortcuts using `Ctrl`, `Alt`, and/or `Shift` (eg, `Ctrl+S`).
   - The `Win` key _could_ be used, but is normally for system-wide actions.
 
-### Example 3 - an Error Message
+### Example 3: an Error Message
 
 ```AutoHotkey
 ; MyScript.ahk
@@ -154,7 +154,7 @@ msg := sT("errors", "bad_path", "/File %path% not found.", {path:filename})
 MsgBox(msg)
 ```
 
-We’re using `sT()`’s fourth argument now - `args`, an [Object literal](https://www.autohotkey.com/docs/v2/Objects.htm#object-literal) with names and values to support __variable expansion__. Variable expansion (`%path%` → "_some-file-name.txt_") is a useful feature even if you don’t plan to support multiple languages.
+We’re using `sT()`’s fourth argument now — `args`, an [Object literal](https://www.autohotkey.com/docs/v2/Objects.htm#object-literal) with names and values to support __variable expansion__. Variable expansion (`%path%` → "_some-file-name.txt_") is a useful feature even if you don’t plan to support multiple languages.
 
 The .LANG files might look like this:
 
@@ -181,7 +181,7 @@ And with _MyScript-\[__de__].lang_ loaded, the output is
 
 Note how the key `bad_path` is shown to the user __verbatim__; this feature (which works for the `errors` section only) allows tech support to identify the error by a string that __does not change__, regardless of the user’s language. When a user from the other side of the world posts a screen shot, tech support will know which error was triggered.
 
-### sT() - The Central Function
+### sT(): The Central Function
 
 The heart of __OneLocale__ is the `sT()` function, which we saw in the examples above. Here it is again:
 
@@ -280,7 +280,7 @@ If you want, you can put all the files just mentioned directly in the Script fol
 
 `OneLocale_Init()` must be inserted in the script before any `sT()` calls.
 
-#### Example 1 - default arguments
+#### Example 1: default arguments
 
 ```AutoHotkey
 ; MyScript.ahk
@@ -305,7 +305,7 @@ The default arguments suffice _IF_ ( assuming `MyScript` is replaced with your s
  `A_ScriptDir` `\docs`
 - The language ID is specified in the .INI file or is equal to `A_Language`
 
-#### Example 2 - no .LANG file
+#### Example 2: no .LANG file
 
 If you want your .INI to also hold your UI text, eliminating .LANG files (most useful for very simple scripts where you don’t want to bother with a separate .LANG file just yet, but want be ready for future expansion), you would set `noLangFile` (an optional argument) to `true`.
 
@@ -313,9 +313,7 @@ If you want your .INI to also hold your UI text, eliminating .LANG files (most u
 locale_info := OneLocale_Init( {noLangFile:true} )
 ```
 
-See [Example - no .LANG File](#example-2---no-lang-file) below.
-
-#### Example 3 - no \docs subdirectory
+#### Example 3: no \docs subdirectory
 
 If you want to put the help file in `A_ScriptDir`, eliminating the
 "\docs" subdirectory, you would clear `sDocsFolder`:
@@ -324,7 +322,7 @@ If you want to put the help file in `A_ScriptDir`, eliminating the
 locale_info := OneLocale_Init( {sDocsFolder:""} )
 ```
 
-#### Example 4 - set custom .INI and .LANG file base namea
+#### Example 4: set custom .INI and .LANG file base names
 
 If your Script name (`A_ScriptName` without the extension) doesn’t match your .INI file name, you would set `sName`. This sets the name of your .INI, and the base names of your .LANG and documentation files. Useful if you want to try a temporary script like `MyScript_TEST.ahk`
 
@@ -332,15 +330,15 @@ If your Script name (`A_ScriptName` without the extension) doesn’t match your 
 locale_info := OneLocale_Init( {sName:"MyScript"} )
 ```
 
-#### Example 5 - set custom help file name & extension
+#### Example 5: set custom help file name & extension
 
-If your help file is _not_ named `MyScript-[/TAG/].htmml` as described above, like `README-/TAG/.asc` for example, you would set `sDocName` and `sDocExt`:
+If your help file is _not_ named `MyScript-[/TAG/].html` as described above, like `README-/TAG/.asc` for example, you would set `sDocName` and `sDocExt`:
 
 ```AutoHotkey
 locale_info := OneLocale_Init( {sDocName:"README-/TAG/", sDocExt:"asc"} )
 ```
 
-If your documentation is in one language only, don’t incude `/TAG/`:
+If your documentation is in one language only, don’t include `/TAG/`:
 
 ```AutoHotkey
 locale_info := OneLocale_Init( {sDocName:"README", sDocExt:"asc"} )
@@ -352,7 +350,7 @@ __OneLocale__ requires a .LANG file: if the Language ID is "__en__", and your sc
 
 A .LANG file is __actually an .ini file__ with a different extension. This lets you set up custom file associations and editor preferences for both types of file. All .INI and .LANG files are accessed with AutoHotkey [IniRead](https://www.autohotkey.com/docs/v2/lib/IniRead.htm#Remarks). You should familiarize yourself with its ‘quirks and features’ — most importantly that you must save a .LANG file as [UTF-16](https://en.wikipedia.org/wiki/UTF-16) with BOM [(Byte Order Mark)](https://en.wikipedia.org/wiki/Byte_order_mark) to preserve Unicode characters.
 
-You don’t need to add anything to the file for now. Your script will work just fine with an empty .LANG file IF you have set default UI text in your code as we showed [earlier](#example-1---adding-a-button).
+You don’t need to add anything to the file for now. Your script will work just fine with an empty .LANG file IF you have set default UI text in your code as we showed [earlier](#example-1-adding-a-button).
 
 ### User-Interface Text
 
@@ -381,7 +379,7 @@ Run your script, and all your UI text will appear just as it was but with `/` pr
 
 ### Completing The .LANG File
 
-This part is surprisingly easy - the information you need to build the .LANG file is in your code. All you need to do is copy and paste. (It goes so quickly that I’m not very motivated to write something to automate the process.)<!-- TODO -->
+This part is surprisingly easy. The information you need to build the .LANG file is in your code. All you need to do is copy and paste. (It goes so quickly that I’m not very motivated to write something to automate the process.)<!-- TODO -->
 
 ```AutoHotkey
 ; MyScript.ahk
@@ -430,7 +428,7 @@ Okay, you’re basically done. You have a complete .LANG file! Now you can:
 
 - Take a fresh look at your UI text, now that it’s separated from your code.
 - Perhaps simplify your code by taking advantage of `sT()`’s variable expansion.
-- Begin working on translations - remember to name each one with a language code.
+- Begin working on translations. Remember to name each one with a language code.
 
 ---
 
@@ -456,7 +454,7 @@ For example, let’s translate a .LANG file section to French.
 I’m using Google Translate \(_this paragraph was written in 2023_) because I don’t speak the language.
 Note, some rephrasing and abbreviations are used to control length.
 
-> :point_right::point_right: In 2025, it’s preferable to use an __AI__ to do your translations.
+> 👉 In 2025, it’s preferable to use an __AI__ to do your translations.
 > Once they understand the [rules](OneLocale-notes-for-translators.html), they can handle a whole .LANG file
 > at once instead of line-by-line.
 
@@ -470,7 +468,7 @@ Note, some rephrasing and abbreviations are used to control length.
   - Multi-line sections are read and displayed as a whole.
   - They won’t have `=` on every line like single-line sections.
   - Line breaks are significant.
-  - For indented text, use `\t` (Tabs) - spaces won’t work.
+  - For indented text, use `\t` (Tabs) — spaces won’t work.
   - For blank lines, use `\n` (newlines)
 - Try not to let translated strings get much longer than the originals.
   (this may or may not be important, depending on the UI)
@@ -481,7 +479,7 @@ Note, some rephrasing and abbreviations are used to control length.
   - Make them unique within a Gui window, if possible
 - Menus can have _Accelerators_
   - Choose appropriate accelerators for your language
-  - Repect your language’s standard keys for Open, Copy, Paste etc.
+  - Respect your language’s standard keys for Open, Copy, Paste etc.
   - Make them unique within a GUI window, if possible
     (dialog boxes can re-use accelerators)
 
