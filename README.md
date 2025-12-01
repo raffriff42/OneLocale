@@ -144,6 +144,6 @@ GNU Lesser General Public License v2.1 – use commercially, modify, ship in clo
 
 OneLocale was first created in February 2023, and has been slowly refined as it was used in many of my personal projects.
 
-I've been doing this class of software for awhile. OneLocale is a complete rework of my 2013 __NetText__ project [(sourceforge)](https://sourceforge.net/projects/nettext/) and there's other work going back a few years before that.
+I've been doing this class of software for awhile. OneLocale is a complete rework of my 2013 **NetText** project [(sourceforge)](https://sourceforge.net/projects/nettext/) and there is other work going back a few years before that.
 
 -- [raffriff42](https://github.com/raffriff42)
