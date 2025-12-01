@@ -8,7 +8,7 @@
 
 **Write your GUI strings in plain English (or your language of choice) today — add translations tomorrow without touching your code again.**
 
-<img src="docs/assets/OneLocale-demo4L-692x532.gif" alt="OneLocale in action" width="600"/>
+<img src="docs/assets/OneLocale-demo4L-692x532.gif" alt="OneLocale in action" width="600" />
 
 ### What you get
 
