@@ -7,9 +7,9 @@ By [raffriff42](https://github.com/raffriff42)
 ![OneLocale logo](assets/OneLocale-Earth_icon_2-x128c.png)
 
 Open Source under GNU Lesser General Public License - see [LEGAL](#legal) section.
-_This page updated 2025-11-21_
+_This page updated 2025-11-30_
 
-[TOC]
+<!-- [TOC] -->
 
 ## INTRODUCTION
 
@@ -25,8 +25,7 @@ Even if you don’t plan to support multiple languages, the way __OneLocale__ he
 
 ### The OneLocale Concept in a Single GIF
 
-![OneLocale working diagram](assets/OneLocale-demo4L-ani.gif)
-_Is a .GIF worth 1000 words?_
+![OneLocale working diagram](assets/OneLocale-demo4L-692x532.gif)
 
 Here are some examples to get us started:
 
