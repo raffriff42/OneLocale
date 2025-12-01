@@ -19,6 +19,7 @@
 ;  Callback // user-defined, but template is supplied
 ;      OneLocaleDlg_Result()
 
+;@ahk-neko-ignore 125 line 'function too big'
 /**********************************************
  * #### OneLocaleDlg_Dialog - show a Language Chooser dialog box
  *
@@ -226,31 +227,31 @@ OneLocaleDlg_Dialog(sParentWinTitle, optional_args:="")
     local sTitle := sT("dialog_lang", "title", "/Change Language")
 
     OneLocaleDlg := Gui(sOpt, sTitle)
-    local G := OneLocaleDlg
+    local Gdlg := OneLocaleDlg
 
     if (!StrLen(idType))
     {
-        G.StatusMessage := sT("errors", "OneLocaleDlg_lang_not_found"
+        Gdlg.StatusMessage := sT("errors", "OneLocaleDlg_lang_not_found"
             , "/'Language' entry '%LangID%' from %src% not valid"
             , {LangID:sLangID, src:sLangIDSource})
         OneLocaleDlg_Result()
         return
     }
-    G.SetFont("s10", )
-    G.parentWinTitle := sParentWinTitle
-    G.StatusMessage := ""
+    Gdlg.SetFont("s10", )
+    Gdlg.parentWinTitle := sParentWinTitle
+    Gdlg.StatusMessage := ""
 
-    G.ini_path  := ini_path
-    G.lang_name := info["Name"]
-    G.arLangs   := arLangs
+    Gdlg.ini_path  := ini_path
+    Gdlg.lang_name := info["Name"]
+    Gdlg.arLangs   := arLangs
 
     ;; DROPDOWN
 
     local cap := sT("dialog_lang", "lbl_lang"
                     , "/User Interface Language:")
-    local ctl := G.Add("Text", "x12 y14 r1", cap)
+    local ctl := Gdlg.Add("Text", "x12 y14 r1", cap)
 
-    ctl := G.Add("DropDownList"
+    ctl := Gdlg.Add("DropDownList"
         , "xp y+10 w300 vctDDLangList", arList)
     ctl.OnEvent("Change", OneLocaleDlg_ListChanged)
     ctl.ToolTip := sT("tooltips_dialog_lang", "lang_list"
@@ -258,7 +259,7 @@ OneLocaleDlg_Dialog(sParentWinTitle, optional_args:="")
 
     local k, v
     for k, v in arList {
-        if (v == G.lang_name) {
+        if (v == Gdlg.lang_name) {
             ctl.Choose(k)
             break
         }
@@ -269,19 +270,19 @@ OneLocaleDlg_Dialog(sParentWinTitle, optional_args:="")
     cap := sT("dialog_lang", "lbl_buttons"
         , "/App will restart if you change Language"
         . "\n(work in progress will be lost)")
-    ctl := G.Add("Text", "x12 y+14", cap)
+    ctl := Gdlg.Add("Text", "x12 y+14", cap)
 
     local x1 := 12
     local x2 := 160
     cap := sT("dialog_lang", "btn_OK", "/OK")
-    ctl := G.Add("Button"
+    ctl := Gdlg.Add("Button"
         , "x" x1 " y+20 w100 -Wrap Section vBtnOK"
         , cap)
     ctl.OnEvent("Click", OneLocaleDlg_OK)
     ctl.Enabled := false
 
     cap := sT("dialog_lang", "btn_Cancel", "/Cancel")
-    ctl := G.Add("Button"
+    ctl := Gdlg.Add("Button"
         , "x" x2 " ys w100 -Wrap"
         , cap)
     ctl.OnEvent("Click", OneLocaleDlg_Cancel)
@@ -298,9 +299,9 @@ OneLocaleDlg_Dialog(sParentWinTitle, optional_args:="")
     local winX, winY, winWid, winHgt
     CLocaleDlg.EnsureWindowIsOnScreen(&winX, &winY, winWid, winHgt, &win2X, &win2Y)
 
-    G.Show("x" win2X " y" win2Y)
-    G.OnEvent("Escape", OneLocaleDlg_Cancel)
-    WinWaitActive G.Title
+    Gdlg.Show("x" win2X " y" win2Y)
+    Gdlg.OnEvent("Escape", OneLocaleDlg_Cancel)
+    WinWaitActive Gdlg.Title
     return
 } ; /OneLocaleDlg_Dialog
 
@@ -312,18 +313,18 @@ OneLocaleDlg_Dialog(sParentWinTitle, optional_args:="")
 OneLocaleDlg_ListChanged(*)
 {
     global OneLocaleDlg
-    local G := OneLocaleDlg
+    local Gdlg := OneLocaleDlg
         ;.lang_name       ; name of current language
         ;.ctDDLangList    ; dropdown list
         ;.BtnOK           ; OK button
 
-    G.Submit(false)
+    Gdlg.Submit(false)
 
     ; newly selected language name
-    local LangList := G["ctDDLangList"]
-    local BtnOK    := G["BtnOK"]
+    local LangList := Gdlg["ctDDLangList"]
+    local BtnOK    := Gdlg["BtnOK"]
 
-    if (LangList.Text == G.lang_name)
+    if (LangList.Text == Gdlg.lang_name)
         BtnOK.Enabled := false
     else
         BtnOK.Enabled := true
@@ -338,22 +339,22 @@ OneLocaleDlg_ListChanged(*)
 OneLocaleDlg_OK(*)
 {
     global OneLocaleDlg
-    local G := OneLocaleDlg
+    local Gdlg := OneLocaleDlg
         ;.ini_path        ; .INI file location
         ;.lang_name       ; name of current language
         ;.arLangs         ; array of installed .LANG files
         ;.ctDDLangList    ; dropdown list
         ;.StatusMessage
 
-    G.Submit(false)
+    Gdlg.Submit(false)
 
-    local LangList := G["ctDDLangList"]
-    if (LangList.Text == G.lang_name)
+    local LangList := Gdlg["ctDDLangList"]
+    if (LangList.Text == Gdlg.lang_name)
         return ; return to Dialog (should not occur as 'OK' button is disabled)
 
     local sID := ""
     local n, o
-    for n, o in G.arLangs
+    for n, o in Gdlg.arLangs
     {
         ; o = {languageID:, languageName:, FullPath:}
         if (o.languageName == LangList.Text) {
@@ -363,7 +364,7 @@ OneLocaleDlg_OK(*)
     }
 
     if (!StrLen(sID)) {
-        G.StatusMessage := sT("errors", "OneLocaleDlg_newname_not_found"
+        Gdlg.StatusMessage := sT("errors", "OneLocaleDlg_newname_not_found"
                         , "/Unexpected error: Language file not found for '%newname%'."
                         , {newname:LangList.Text})
         OneLocaleDlg_Result()
@@ -372,17 +373,17 @@ OneLocaleDlg_OK(*)
 
     local e
     try {
-        CLocaleDlg.IniWriter(G.ini_path, "general", "Language", " " sID)
+        CLocaleDlg.IniWriter(Gdlg.ini_path, "general", "Language", " " sID)
     }
     catch Error as e {
         MsgBox(sT("errors", "OneLocaleDlg_ini_write_error"
                     , "/Could not write to configuration file\n%path%"
-                    , {path:G.ini_path})
-                , G.Title, "icon!")
+                    , {path:Gdlg.ini_path})
+                , Gdlg.Title, "icon!")
     }
-    G.StatusMessage := "Language=" sID
+    Gdlg.StatusMessage := "Language=" sID
     OneLocaleDlg_Result()
-    G.Destroy
+    Gdlg.Destroy
     return
 }
 
@@ -394,15 +395,15 @@ OneLocaleDlg_OK(*)
 OneLocaleDlg_Cancel(*)
 {
     global OneLocaleDlg
-    local G := OneLocaleDlg
+    local Gdlg := OneLocaleDlg
         ;.parentWinTitle
         ;.StatusMessage
 
     ToolTip() ; close any current ToolTips
-    WinActivate G.parentWinTitle
-    G.StatusMessage := "Cancel"
+    WinActivate Gdlg.parentWinTitle
+    Gdlg.StatusMessage := "Cancel"
     OneLocaleDlg_Result()
-    G.Destroy
+    Gdlg.Destroy
     return
 }
 
