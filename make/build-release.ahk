@@ -38,8 +38,8 @@ delTemp     := true
 ; • baseExcludes - excluded from all release builds
 baseExcludes := "*.code-workspace|*.lnk|.gitignore|\.git|\.vscode|\_*|\make|\releases"
 
-arProj := []
-arProj.Push({
+projects := []
+projects.Push({
     name:     "OneLocale_Demo"
   , folder:   "..\utilities\OneLocale_Demo"
   , copyLib:  true
@@ -48,7 +48,7 @@ arProj.Push({
   , includes: "..\utilities\lib\ToolTips.ahk"
 })
 
-arProj.Push({
+projects.Push({
     name:     "OneLocale_Baker"
   , folder:   "..\utilities\OneLocale_Baker"
   , copyLib:  true
@@ -59,7 +59,7 @@ arProj.Push({
             . "|..\utilities\lib\ToolTips.ahk"
 })
 
-arProj.Push({
+projects.Push({
     name:     "OneLocale_FindLangID"
   , folder:   "..\utilities\OneLocale_FindLangID"
   , copyLib:  true
@@ -68,7 +68,7 @@ arProj.Push({
   , includes: "..\utilities\lib\ToolTips.ahk"
 })
 
-arProj.Push({
+projects.Push({
     name:     "OneLocale_All"
   , folder:   ".."
   , copyLib:  false
@@ -91,7 +91,7 @@ tempRoot := A_Temp "\build_release\" tempHome "-" A_NowUTC
 ; keep robocopy super quiet + no junction copies
 RoboOpts := "/E /COPY:DT /E /NFL /NDL /NJH /NJS /NC /NS /NP /XJ"
 
-for proj in arProj
+for key, proj in projects
 {
     tempProj := tempRoot "\" proj.name
     DirCreate(tempProj)
@@ -105,9 +105,9 @@ for proj in arProj
         {
             ex := Trim(ex)
             if (SubStr(ex, 1, 1) = "\")
-                xd .= " " Chr(34) SubStr(ex, 2) Chr(34)
+                xd .= ' "' SubStr(ex, 2) '"'
             else
-                xf .= " " Chr(34) ex Chr(34)
+                xf .= ' "' ex '"'
         }
         opts .= xd ? " /XD" xd : ""
         opts .= xf ? " /XF" xf : ""
@@ -135,7 +135,7 @@ for proj in arProj
     }
 
     TryZip()
-    Loop 5 { ; max 5 retries, 200 ms apart
+    Loop 6 { ; max 6 retries, 200 ms apart
         Sleep 200
         if FileExist(zipName) && (FileGetSize(zipName) > 0)
             break
@@ -153,7 +153,7 @@ for proj in arProj
 if (delTemp)
     DirDelete(tempRoot, true)   ; clean up temp
 
-MsgBox(arProj.Length " release zip(s) ready in`n" outDir, S_TITLE, 0x40)
+MsgBox(projects.Length " release zip(s) ready in`n" outDir, S_TITLE, "iconi")
 ExitApp
 
 SplitPathFunc(sPath)
@@ -162,8 +162,8 @@ SplitPathFunc(sPath)
     return {
         Drive:     drive
       , Parent:    parent
+      , Name:      name
       , BaseName:  nameNoExt
       , Extension: ext
-      , Name:      name
     }
 }
