@@ -97,17 +97,18 @@ class CFileUtils
      *
      * @param {String} sPath - file name or URL to be analyzed
      *
-     * @return {Object} { Drive, Parent, BaseName, Extension }
+     * @return {Object} { Drive, Parent, Name, BaseName, Extension }
      * <!--
      * @version 2025-12-05 raffriff42
      * -->
      */
     static SplitPathFunc(sPath)
     {
-        local s_parent, s_ext, s_basename, s_drive
-        SplitPath sPath, , &s_parent, &s_ext, &s_basename, &s_drive
+        local s_name, s_parent, s_ext, s_basename, s_drive
+        SplitPath sPath, &s_name, &s_parent, &s_ext, &s_basename, &s_drive
 
-        return { Drive:s_drive, Parent:s_parent, BaseName:s_basename, Extension:s_ext }
+        return { Drive:s_drive, Parent:s_parent, BaseName:s_basename
+                , Name:s_name, Extension:s_ext }
     }
 
     /**********************************************
