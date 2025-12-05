@@ -49,13 +49,13 @@ SetTitleMatchMode(2) ; contains
 ;; INCLUDES
 ;/////////////////////////////////////////////////
 
-#Include "..\..\lib\OneLocale.ahk"
-#Include "..\..\lib\OneLocale_Baker.ahk"
-#Include "..\lib\ControlEnable.ahk"
-#Include "..\lib\FileUtils.ahk"
-#Include "..\lib\IniFiles.ahk"
-#Include "..\lib\StringUtils.ahk"
-#Include "..\lib\ToolTips.ahk"
+#Include "lib\OneLocale.ahk"
+#Include "lib\OneLocale_Baker.ahk"
+#Include "lib\ControlEnable.ahk"
+#Include "lib\FileUtils.ahk"
+#Include "lib\IniFiles.ahk"
+#Include "lib\StringUtils.ahk"
+#Include "lib\ToolTips.ahk"
 
 ;/////////////////////////////////////////////////
 ;; INIT

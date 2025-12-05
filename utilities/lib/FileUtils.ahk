@@ -24,6 +24,7 @@
 ;; (Table of Contents)
 ;  class CFileUtils {
 ;      PathRelativeTo()
+;      SplitPathFunc()
 ;      GetPathPart()
 ;      GetParent()
 ;      GetBaseName()
@@ -89,6 +90,24 @@ class CFileUtils
         else {
             return s_parent "\" sRelative ; relative path (file)
         }
+    }
+
+    /**********************************************
+     * #### SplitPathFunc: like SplitPath, but returns a Object
+     *
+     * @param {String} sPath - file name or URL to be analyzed
+     *
+     * @return {Object} { Drive, Parent, BaseName, Extension }
+     * <!--
+     * @version 2025-12-05 raffriff42
+     * -->
+     */
+    static SplitPathFunc(sPath)
+    {
+        local s_parent, s_ext, s_basename, s_drive
+        SplitPath sPath, , &s_parent, &s_ext, &s_basename, &s_drive
+
+        return { Drive:s_drive, Parent:s_parent, BaseName:s_basename, Extension:s_ext }
     }
 
     /**********************************************

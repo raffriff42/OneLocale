@@ -50,10 +50,10 @@ S_VERSION := "1.4"
 
 ;; INCLUDES
 
-#Include "..\..\lib\OneLocale.ahk"
-#Include "..\..\lib\OneLocale_Dialog.ahk"
-#Include "..\..\lib\OneLocale_Utils.ahk"
-#Include "..\lib\ToolTips.ahk"
+#Include "lib\OneLocale.ahk"
+#Include "lib\OneLocale_Dialog.ahk"
+#Include "lib\OneLocale_Utils.ahk"
+#Include "lib\ToolTips.ahk"
 
 ;; INIT
 

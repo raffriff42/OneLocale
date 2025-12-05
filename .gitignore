@@ -15,3 +15,9 @@ _notes
 /utilities/OneLocale_Demo/_lang-NOT
 /utilities/OneLocale_Demo/OneLocale_UnDemo.ahk
 /docs/OneLocale-\[en\].html
+/_make
+/utilities/OneLocale_Baker/lib
+/utilities/OneLocale_Demo/lib
+/utilities/OneLocale_FindLangID/lib
+/_data
+/make/releases

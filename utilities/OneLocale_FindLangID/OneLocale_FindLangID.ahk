@@ -49,9 +49,9 @@ S_VERSION := "1.0"
 ;; INCLUDES
 ;/////////////////////////////////////////////////
 
-#Include "..\..\lib\OneLocale.ahk"
-#Include "..\..\lib\OneLocale_LangIDs.ahk"
-#Include "..\lib\ToolTips.ahk"
+#Include "lib\OneLocale.ahk"
+#Include "lib\OneLocale_LangIDs.ahk"
+#Include "lib\ToolTips.ahk"
 
 ;/////////////////////////////////////////////////
 ;; INIT
@@ -86,7 +86,7 @@ BuildGui()
     global S_TITLE
 
     local G := Gui()
-    G.SetFont("s10")
+    ;G.SetFont("s10")
 
     local ctl
     ctl := G.Add("Text", "x16 y13 w340", sT("gui", "description"
