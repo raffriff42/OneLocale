@@ -4,20 +4,10 @@ _notes
 *.bat
 *.code-workspace
 *.lnk
-/_sample
-/data/Language-data-\[MS-LCID\].html.bak
-/data/Language-data-\[MS-LCID\]-03.ods
-/data/Language-data-\[MS-LCID\]-notes (Brave AI).odt
-/data/Microsoft - Language-Code Identifier (LCID) Reference.url
-/data/Microsoft - Language-data-\[MS-LCID\] Appendix A - Product Behavior.url
-/data/Wikipedia - language-codes ISO 639.url
-/data/Wikipedia - Windows code page.url
-/utilities/OneLocale_Demo/_lang-NOT
-/utilities/OneLocale_Demo/OneLocale_UnDemo.ahk
-/docs/OneLocale-\[en\].html
-/_make
-/utilities/OneLocale_Baker/lib
-/utilities/OneLocale_Demo/lib
-/utilities/OneLocale_FindLangID/lib
-/_data
+/_*
 /make/releases
+/utilities/OneLocale_Baker/lib
+/utilities/OneLocale_Demo/_lang-NOT
+/utilities/OneLocale_Demo/lib
+/utilities/OneLocale_Demo/OneLocale_UnDemo.ahk
+/utilities/OneLocale_FindLangID/lib
