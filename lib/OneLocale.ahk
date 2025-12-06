@@ -678,8 +678,7 @@ OneLocale_Init(optional_args:="")
 
     local rtnObjMap := { success:false, errmsg:"unknown" }
 
-    if (IsSet(g_lang_map) && IsObject(g_lang_map)
-    && (g_lang_map Is Map) && g_lang_map.Has(sID))
+    if (IsSet(g_lang_map) && IsObject(g_lang_map) && (g_lang_map Is Map))
     {
         ; find best available matching ID (ISO/LCID/Parent/fallback)
         sID := CLocale.FindBestMap(sID, sFallback, &errmsg)
@@ -1039,7 +1038,7 @@ class CLocale
             return sFallback
         }
 
-        if (CLocale.GetIDType(sTmp)=="LCID")
+        if (CLocale.GetIDType(sID)=="LCID")
         {
             ; try the corresponding ISO:
             sTmp := info["IsoTag"]
