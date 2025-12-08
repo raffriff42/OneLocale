@@ -4,10 +4,11 @@
 ;
 ;@version 0.1 2025-10-27
 ;@version 0.2 2025-11-23
+;@version 0.2 2025-12-08 bugfixes
 ;************************************************
 S_TITLE   := "OneLocale_Baker"
-S_VERSION := "0.2 2025-11-23"
-;@Ahk2Exe-SetVersion 0.2.0.1
+S_VERSION := "0.2 2025-12-08"
+;@Ahk2Exe-SetVersion 0.2.1.1
 ;@Ahk2Exe-SetName OneLocale_Baker
 ;@Ahk2Exe-SetDescription Load .LANG files, generate .AHKs
 ;@Ahk2Exe-SetCopyright (c) 2025 raffriff42 (LGPL)
@@ -79,7 +80,6 @@ if (!locale_info.success) {
 g_WinTitle     := S_TITLE
 g_winWid       := 0  ; actual width of this window, determined after Gui Show
 g_winID        := 0  ; unique ID of this window
-g_tmp_folder   := "" ; FoldersListUpdate
 
 g_StatIcon     := ICON_CHECK
 
@@ -283,7 +283,7 @@ BuildGui()
 
     G["vBtnSrcFolder"].Focus() ; deselect 'vSrcPath' edit control
 
-    G.OnEvent("DropFiles", GuiDropFiles)
+    ;G.OnEvent("DropFiles", GuiDropFiles)
     OnMessage(0x200, On_WM_MOUSEMOVE) ; tooltips
     OnMessage(0x2A3, On_WM_MOUSELEAVE)
     OnExit(ExitSub)
@@ -309,24 +309,22 @@ ButtonFolder(ctl, *)
 {
     global
     Gmain.Submit(0)
-    local isOut   := ctl.isOut
-    local vFolder := Gmain[(isOut ? "vOutFolder" : "vSrcFolder")].Text
-
-    ;start_folder := A_InitialWorkingDir
-    local start_folder := "::{20d04fe0-3aea-1069-a2d8-08002b30309d}"
-    if (StrLen(vFolder) > 0) {
-        start_folder := "*" vFolder
-    }
+    local isOut := ctl.isOut
 
     ToolTip()
-    local options := (isOut ? 3 : 0) ; if output: allow "make new folder" button
-    local cap := sT("gui", (isOut ? "OutFolder" : "SrcFolder")
-                        , "Select Folder")
-    local ff  := DirSelect(start_folder, options, cap)
-    g_tmp_folder := ""
-    if (StrLen(ff)) {
-        g_tmp_folder := ff
-        FoldersListUpdate(isOut)
+    local start_folder := "::{20d04fe0-3aea-1069-a2d8-08002b30309d}"
+    local options, caption
+    if (isOut) {
+        options := 3 ; "make new folder" button
+        caption := sT("gui", "OutFolder", "/Select Output Folder")
+    }
+    else {
+        options := 0
+        caption := sT("gui", "SrcFolder", "/Select Source Folder")
+    }
+    local sRtn  := DirSelect(start_folder, options, caption)
+    if (StrLen(sRtn)) {
+        FoldersListUpdate(sRtn, isOut)
     }
     return
 }
@@ -349,8 +347,8 @@ ButtonGo(*)
 
     ; FOLDERS
 
-    FoldersListUpdate(false)
-    FoldersListUpdate(true)
+    FoldersListUpdate(vSrcFolder, false)
+    FoldersListUpdate(vOutFolder, true)
 
     local srcfolders := ""
     local k, v
@@ -434,6 +432,11 @@ ButtonGo(*)
             SoundBeep 880, 150
         }
         ControlEnableALL(Gmain, true)
+
+        local ss_msg := sT("status", "done"
+                            , "/Done writing baked code to %path%"
+                            , {path:vOutFolder})
+        ShowStatus(ss_msg, ICON_CHECK)
     }
     return
 }
@@ -526,8 +529,7 @@ FolderChanged(ctl, *)
     if (busy)
         return
     busy := true
-    FoldersListUpdate(ctl.isOut)
-    GuiSubmitAndGoTest()
+    FoldersListUpdate(ctl.Text, ctl.isOut)
     busy := false
     return
 }
@@ -559,7 +561,7 @@ FoldersDataUpdate(s_Folder, isOut)
  * #### FoldersListUpdate: update underlying data if new folder has been added
  ** (maintain MRU list of recent items w/ newest item at top)
  */
-FoldersListUpdate(isOut)
+FoldersListUpdate(s_Folder, isOut)
 {
     global
     static busy := false
@@ -569,13 +571,8 @@ FoldersListUpdate(isOut)
 
     Gmain.Submit(0)
     local cbo := Gmain[(isOut ? "vOutFolder" : "vSrcFolder")]
-    local s_Folder := ""
     try {
-        if (StrLen(g_tmp_folder)) {
-            s_Folder := g_tmp_folder ; from ButtonFolder()
-            g_tmp_folder := ""
-        }
-        else {
+        if (!StrLen(s_Folder)) {
             s_Folder := cbo.Text
         }
 
@@ -592,7 +589,9 @@ FoldersListUpdate(isOut)
         cbo.Delete()
         cbo.Add(ar)
         cbo.Choose(1)
+        cbo.ToolTip := cbo.Text
     }
+    GuiSubmitAndGoTest()
     busy := false
     return
 }
@@ -609,23 +608,18 @@ GuiClose()
 
 /**************************************************
  * #### GuiDropFiles: called when files are dragged onto the GUI window
- */
 GuiDropFiles(_GuiObj, _GuiCtrlObj, FileArray, _X, _Y)
 {
     global
     local i, s
     for i, s in FileArray
     {
-        if (StrLen(DirExist(s)))
-        {
-            g_tmp_folder := s
-            FoldersListUpdate(false)
-            break
-        }
+        ;...
     }
     GuiSubmitAndGoTest()
     return
 }
+ */
 
 /**************************************************
  * #### GuiEscape: called when [Escape] key is pressed
@@ -681,12 +675,12 @@ GuiSubmitAndGoTest()
 GoTests(sSrcFolder, sOutFolder)
 {
     local msg
-    if (!StrLen(FileExist(sSrcFolder))) {
-        msg := sT("status", "bad_Folder", "/Bad Folder")
+    if (!StrLen(DirExist(RTrim(sSrcFolder, "\")))) {
+        msg := sT("status", "bad_SrcFolder", "/Bad Source Folder")
         return msg
     }
-    if (!StrLen(FileExist(sOutFolder))) {
-        msg := sT("status", "bad_Folder", "/Bad Folder")
+    if (!StrLen(DirExist(RTrim(sOutFolder, "\")))) {
+        msg := sT("status", "bad_OutFolder", "/Bad Output Folder")
         return msg
     }
     ; success
