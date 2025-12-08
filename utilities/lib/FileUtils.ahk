@@ -141,6 +141,7 @@ class CFileUtils
      * <!--
      * @version 2024-10-01
      * @version 2025-11-25 `isFolder`
+     * @version 2025-12-08 bugfix
      * -->
      */
     static GetPathPart(sPath, sFormat, isFolder:=false)
@@ -150,10 +151,10 @@ class CFileUtils
         }
         local s_fullname, s_parent, s_ext, s_basename, s_drive
 
+        SplitPath sPath, &s_fullname, &s_parent, &s_ext, &s_basename, &s_drive
         if (!StrLen(s_drive)) {
             sPath := CFileUtils.PathRelativeTo(sPath, A_WorkingDir, isFolder)
         }
-        SplitPath sPath, &s_fullname, &s_parent, &s_ext, &s_basename, &s_drive
         s_parent := SubStr(s_parent, StrLen(s_drive)+2)
 
         switch (sFormat) {
