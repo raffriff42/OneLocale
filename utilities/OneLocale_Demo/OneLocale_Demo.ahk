@@ -43,6 +43,7 @@ S_VERSION := "1.4"
 
 #Requires AutoHotkey v2.0
 #SingleInstance Off
+#NoTrayIcon
 
 #Warn All, MsgBox
 ;#Warn LocalSameAsGlobal, Off

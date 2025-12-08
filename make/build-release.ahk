@@ -67,7 +67,7 @@ projects.Push({
             . "|OneLocale_LanguagesTable.ahk|OneLocale_Utils.ahk"
   , includes: "..\utilities\lib\ToolTips.ahk"
 })
-
+/*
 projects.Push({
     name:     "OneLocale_All"
   , folder:   ".."
@@ -75,6 +75,7 @@ projects.Push({
   , excludes: baseExcludes
   , includes: ""
 })
+*/
 
 ; ======================== RUN ===================================
 S_TITLE := "Release Builder"
