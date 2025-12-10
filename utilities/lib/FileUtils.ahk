@@ -150,10 +150,11 @@ class CFileUtils
             return ""
         }
         local s_fullname, s_parent, s_ext, s_basename, s_drive
-
         SplitPath sPath, &s_fullname, &s_parent, &s_ext, &s_basename, &s_drive
-        if (!StrLen(s_drive)) {
+        if (!StrLen(s_drive))
+        {
             sPath := CFileUtils.PathRelativeTo(sPath, A_WorkingDir, isFolder)
+            SplitPath sPath, &s_fullname, &s_parent, &s_ext, &s_basename, &s_drive
         }
         s_parent := SubStr(s_parent, StrLen(s_drive)+2)
 
@@ -623,13 +624,14 @@ class CFileUtils
      *                 if error or user canceled, returns empty string
      * ##### Example:
      * ```AutoHotkey
-     * sFileName := sOpenDlg(hWnd, "example.txt", 0, "Select File", "Text Files (*.txt)|*.txt|All Files (*.*)|*.*")
+     * sFileName := sOpenDlg(hWnd, "example.txt", 0, "Select File", "Text Files (*.txt)|All Files (*.*)")
      * ```
      */
     static sOpenDlg(hOwner, sFolder_FileName, nFlags:=0, sTitle:="", sFilters:="")
     {
-        nFlags := 0
-        try nFlags := Round(nFlags)
+        _nFlags := 0
+        try _nFlags := Round(nFlags)
+        nFlags := _nFlags
         nFlags &= ~CFileUtils.OverwritePrompt
 
         ; try to force use of new-style dialog box:
@@ -671,13 +673,14 @@ class CFileUtils
      *
      * ##### Example:
      * ```AutoHotkey
-     * sFileName := sSaveAsDlg(hWnd, "example.txt", 0, "Select File", "Text Files (*.txt)|*.txt|All Files (*.*)|*.*")
+     * sFileName := sSaveAsDlg(hWnd, "example.txt", 0, "Select File", "Text Files (*.txt)|All Files (*.*)")
      * ```
      */
     static sSaveAsDlg(hOwner, sFolder_FileName, nFlags:=0, sTitle:="", sFilters:="")
     {
-        nFlags := 0
-        try nFlags := Round(nFlags)
+        _nFlags := 0
+        try _nFlags := Round(nFlags)
+        nFlags := _nFlags
         nFlags |= CFileUtils.FileMustExist
         nFlags |= CFileUtils.HideReadOnly
         nFlags &= ~CFileUtils.ReadOnly

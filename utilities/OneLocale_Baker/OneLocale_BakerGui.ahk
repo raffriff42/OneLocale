@@ -419,11 +419,25 @@ ButtonGo(*)
         outpath := vOutFolder "\" outname ".ahk"
 
         ; input a Map tree, generate .ahk code
-        BakeLangMap(outpath, mlang, vSrcPath, vLangID)
         ;   out_path - file to be created or overwritten
         ;   src_map  - source Map tree
         ;   src_path - source file (used as a note in the generated comments ONLY)
         ;   lang_id  - identifier (g_lang_data key) for the current map, eg, "en"
+        try {
+            BakeLangMap(outpath, mlang, vSrcPath, vLangID)
+        }
+        catch Error as e {
+            errmsg := sT("errors", "bad_bake"
+                        , "/BakeLangMap\n\n"
+                          . "path_out='%path_out%', \n\n"
+                          . "path_src='%path_src%', \n\n"
+                          . "lang_id='%id%'\n\n"
+                          . "failed: %errmsg%"
+                        , {path_out:outpath, path_src:vSrcPath, id:vLangID, errmsg:e.Message})
+            MsgBox(errmsg, S_TITLE, "icon!")
+            ControlEnableALL(Gmain, true)
+            return
+        }
         mlang := 0
 
         ;Sleep 1000
@@ -530,6 +544,7 @@ FolderChanged(ctl, *)
         return
     busy := true
     FoldersListUpdate(ctl.Text, ctl.isOut)
+    GuiSubmitAndGoTest()
     busy := false
     return
 }
