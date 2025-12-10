@@ -38,7 +38,6 @@
 ;      LCIDToLocaleName(nLCID)
 ;      LocaleNameToLCID(sTag)
 ;      MapRead(sMapName, sSection, sKey, sDefault)
-;      MapReadEx(sMapName, sSection, sKey, sDefault)
 ;      PathRelativeTo(sHome, sRelative)
 ;      sE(s, args)
 ;      StringToVariable(s)
@@ -218,10 +217,10 @@ g_lang_map  := 0  ; Map containing language data, if initialized
  *
  * ##### Extenders
  *
- * The .LANG file may list a set of _extender_ files (or maps) via an optional
- * Extenders section. If the requested message is not found in the main .LANG file
- * (or map), this function looks into the extenders. Extenders are listed in a special
- * section (or key) named `:extenders:`.
+ * The .LANG file may list a set of _extender_ files via an optional
+ * Extenders section. If the requested message is not found in the main .LANG file,
+ * this function looks into the extenders. Extenders are listed in a special
+ * section named `:extenders:`.
  *
  * This feature is helpful when you have .LANG data that is used in multiple
  * projects, such as a dialog box (for example, `OneLocaleDlg_Dialog`)
@@ -274,11 +273,11 @@ sT(sSection, sKey, sDefault:="ERROR", args:="", langPath:="")
         if (mapped) {
             if (sKey=="[section]") {
                 errcode := 2 ; bad  section
-                s := CLocale.MapReadEx(g_lang_id, sSection, , sDefault)
+                s := CLocale.MapRead(g_lang_id, sSection, , sDefault)
             }
             else if (StrLen(sKey)) {
                 errcode := 3 ; bad key
-                s := CLocale.MapReadEx(g_lang_id, sSection, sKey, sDefault)
+                s := CLocale.MapRead(g_lang_id, sSection, sKey, sDefault)
             }
             ; (else mapped == false - call IniReadEx)
         }
@@ -1278,8 +1277,6 @@ class CLocale
      * feature that if the requested item  (Key or Section name) is not found in the
      * main .INI file, this function looks into _extender_ files.
      *
-     * (See also {@link CLocale.MapReadEx})
-     *
      * Extender files are listed in a special .INI section named ':extenders:'.
      *
      * Finally, if the search is exhausted, `sDefault` is returned if it's been set,
@@ -1480,8 +1477,7 @@ class CLocale
      * @return {String} value of the requested Section or Key; `sDefault` on error
      *
      * @throws
-     *     Like `IniRead`, an Error is thrown on failure, but only if `sDefault` is omitted;
-     *     an Error is also thrown if an extender name is illegal.
+     *     Like `IniRead`, an Error is thrown on failure, but only if `sDefault` is omitted
      * <!--
      * @version 2025-10-31
      * -->
@@ -1530,148 +1526,6 @@ class CLocale
         }
         return sRtn
     } ; /MapRead
-
-    /**************************************************
-     * #### MapReadEx: MapRead for Maps that have extenders
-     *
-     * Works like {@link CLocale.MapRead} with the added
-     * feature that if the requested item (Key or Section name) is not found in the
-     * main Map, this function looks into _extender_ maps.
-     *
-     * (See also {@link CLocale.IniReadEx})
-     *
-     * Extender maps are listed under the special key ':extenders:'.
-     *
-     * Finally, if the search is exhausted, `sDefault` is returned if it'sRtn been set,
-     * or an Error is raised if it'sRtn not - just like `IniRead`.
-     *
-     * Extenders can be incorporated into many projects as a __common repository__.
-     *
-     * Extenders are specified by `name` - specifically, a key name to
-     * another submap of `g_lang_data`
-     *
-     * Extender names follow rules for [variable names](
-     * https://www.autohotkey.com/docs/v2/Concepts.htm#names)
-     *
-     * - They must have only Letters, digits, underscore and non-ASCII characters
-     *   (no brackets, braces, slashes, whitespace etc).
-     * - The regular expression for valid names is `(*UCP)^[\w]*$`
-     * - Names must be unique in `g_lang_data`.
-     *
-     * Extenders are checked in order until the requested item is found
-     *
-     * If the requested item is not found in any of the extenders, `sDefault` is returned;
-     *   if there is no `sDefault`, a catchable Error is thrown.
-     *
-     * @param {String} sMapName - name of current Map (a key to a submap of g_lang_data)
-     *
-     * @param {String} sSection - required section name within .INI file;
-     *     the heading that appears in square brackets (do not include the brackets)
-     *
-     *  - Unlike `IniRead`, here you can _not_ omit the section
-     *    to get a linefeed (`n) delimited list of section names.
-     *
-     * @param {String} sKey        - the key name in the .ini file;
-     *                               if unset, read entire section
-     *                               default=(unset)
-     *
-     * @param {String} sDefault    - value to return in case of error or item not found;
-     *                               default=(unset)
-     *
-     * @return {String} value of the requested Section or Key; `sDefault` on error
-     *
-     * @throws
-     *     Like `IniRead`, an Error is thrown on failure, but only if `sDefault` is omitted;
-     *     an Error is also thrown if an extender name is illegal.
-     * <!--
-     * @version 2025-11-09
-     * -->
-     */
-    static MapReadEx(sMapName, sSection, sKey:=unset, sDefault:=unset)
-    {
-        global g_lang_map
-        if (!IsSet(sMapName) || !StrLen(sMapName))
-            throw Error("missing sMapName argument")
-        if (!IsSet(sSection) || !StrLen(sSection))
-            throw Error("missing sSection argument")
-
-        ; to catch errors, do NOT supply sDefault at this point
-        local vv := ""
-        local e, errmsg := ""
-        try {
-            if (IsSet(sKey)) {
-                vv := CLocale.MapRead(sMapName, sSection, sKey)
-            }
-            else {
-                vv := CLocale.MapRead(sMapName, sSection)
-            }
-        }
-        catch Error as e {
-            errmsg := e.Message ; eg, "The requested key, section or file was not found"
-            ; continue the search...
-        }
-        else {
-            return vv ; successfully read the value
-        }
-
-        ; --------------------------------------------------------------------
-        ; if here, did not find the requested item - look in the extender map(s)
-        ; --------------------------------------------------------------------
-
-        ; iterate through the extenders:
-        ; g_lang_map[sMapName]
-        ;              [":extenders:"]["[section]"][<array-index>]
-        ;              [sSection][sKey]
-
-        if (!IsSet(g_lang_map) || !IsObject(g_lang_map) || !(g_lang_map Is Map))
-            throw Error("g_lang_map not initialized")
-        local errcode := 0
-        local sRtn
-        try {
-            errcode := 1
-            local mlng := g_lang_map[sMapName]
-
-            errcode := 31
-            local mext := mlng[":extenders:"] ; throw if no optional extender section
-
-            errcode := 32
-            local ar := mext["[section]"] ; Array
-
-            errcode := 99 ; unexpected
-            local n, m
-            for n, m in ar
-            {
-                if !(m Is Map)
-                    continue
-                if !(m.Has(sSection))
-                    continue
-                local msec := m[sSection]
-
-                if (IsSet(sKey)) {
-                    ;equiv to: IniRead(sPath, sSection, sKey)
-                    if !(msec.Has(sKey))
-                        continue
-                    sRtn := msec[sKey]
-                }
-                else {
-                    ;equiv to: IniRead(sPath, sSection)
-                    local asec := msec["[section]"] ; Array
-                    sRtn := ""
-                    local k, v
-                    for k, v in asec {
-                        sRtn .= v "`n"
-                    }
-                }
-            }
-        }
-        catch Error as e {
-            if (IsSet(sDefault))
-                return sDefault
-            errmsg := CLocale.ErrDecode(errcode, sMapName, sSection, sKey)
-            throw Error(errmsg "`n" e.Message)
-        }
-        return sRtn
-    } ; /MapReadEx
 
     /**************************************************
      * #### PathRelativeTo: input relative path, return absolute path
