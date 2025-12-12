@@ -117,7 +117,7 @@ for n, s in A_Args
     s := CFileUtils.RemoveQuotes(s)        ; remove quotes, if any
     if (!StrLen(s))
         continue
-    s := CLocale.PathRelativeTo(s, A_WorkingDir, true) ; resolve relative path
+    s := CLocale.PathRelativeTo(s, A_WorkingDir) ; resolve relative path
     s := CFileUtils.PrefixLongPath(s)      ; prefix long path
     if (StrLen(DirExist(s)))
     {

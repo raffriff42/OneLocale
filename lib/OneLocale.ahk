@@ -1692,8 +1692,8 @@ class CLocale
         }
         sRef := RTrim(sRef, "\")
 
-        local s_parent, s_drive
-        SplitPath sRef, , &s_parent, , , &s_drive
+        local s_parent, s_refdrive
+        SplitPath sRef, , &s_parent, , , &s_refdrive
         if (StrLen(FileExist(sRef)) && !StrLen(DirExist(sRef))) {
             sRef := s_parent
         }
@@ -1705,18 +1705,7 @@ class CLocale
             return sRel ; UNC path
         }
         else if (RegexMatch(sRel, "^\\")) {
-            return s_drive sRel ; parent drive, root path
-        }
-
-        SplitPath sRel, , , , , &s_drive
-        if (StrLen(s_drive) && StrLen(FileExist(sRel))) {
-            return sRel
-        }
-
-        if (SubStr(sRel, 1, 1) == "\")
-        {
-            SplitPath sRef, , , , , &s_drive
-            return s_drive sRel
+            return s_refdrive sRel ; parent drive, root path
         }
 
         while (SubStr(sRel, 1, 3) == "..\") {
