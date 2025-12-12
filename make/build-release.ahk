@@ -66,8 +66,12 @@ BuildRelease()
 
         sIncludes := IniReadSection(ini_path, sName "_includes", "")
 
-        if (!StrLen(sFolder) || !StrLen(DirExist(sFolder))) {
-            MsgBox(sName: ": 'folder' not found!", S_TITLE, "iconx")
+        if (!StrLen(sFolder)) {
+            MsgBox("Project '" sName "': 'folder' key missing in .ini!", S_TITLE, "iconx")
+            ExitApp
+        }
+        if (!DirExist(sFolder)) {
+            MsgBox("Project '" sName "': folder not found!`n`n" sFolder, S_TITLE, "iconx")
             ExitApp
         }
         arProjects.Push({name:sName, folder:sFolder, copyLib:copyLib
