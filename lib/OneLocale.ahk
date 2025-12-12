@@ -39,7 +39,7 @@
 ;      LocaleNameToLCID(sTag)
 ;      MapRead(sMapName, sSection, sKey, sDefault)
 ;      MapReadEx(sMapName, sSection, sKey, sDefault)
-;      PathRelativeTo(sHome, sRelative)
+;      PathRelativeTo(sRel, sRef)
 ;      sE(s, args)
 ;      StringToVariable(s)
 ;  }
@@ -1678,33 +1678,53 @@ class CLocale
      *
      * - cf. Windows' `PathRelativePathTo`, `GetFullPathName`
      *
-     * @param {String} sRelative - the absolute or relative path
-     * @param {String} sHome - the path `sRelative` may be relative to
-     * @param {Boolean} isFolder - if true, assume `sRelative` is a folder path;
-     *                  else (default) assume it's a file path
-     *
-     * @return {String} an absolute path (which may not exist)
+     * @param {String} sRel - the absolute or relative path
+     * @param {String} sRef - the path `sRel` may be relative to
+     * @return {String} an absolute path
      */
-    static PathRelativeTo(sRelative, sHome, isFolder:=false)
+    static PathRelativeTo(sRel, sRef)
     {
-        local s_parent, s_drive
-        SplitPath sHome, , &s_parent, , , &s_drive
+        if (!StrLen(sRel)) {
+            return ""
+        }
+        if (sRel == ".") {
+            return sRef
+        }
+        sRef := RTrim(sRef, "\")
 
-        if (RegexMatch(sRelative, "i)^[a-z][:]")) {
-            return sRelative ; absolute path
+        local s_parent, s_drive
+        SplitPath sRef, , &s_parent, , , &s_drive
+        if (StrLen(FileExist(sRef)) && !StrLen(DirExist(sRef))) {
+            sRef := s_parent
         }
-        else if (RegexMatch(sRelative, "i)^\\\\[a-z0-9_?-]")) {
-            return sRelative ; UNC path
+
+        if (RegexMatch(sRel, "i)^[a-z][:]")) {
+            return sRel ; absolute path
         }
-        else if (RegexMatch(sRelative, "^\\")) {
-            return s_drive sRelative ; parent drive, root path
+        else if (RegexMatch(sRel, "i)^\\\\[a-z0-9_?-]")) {
+            return sRel ; UNC path
         }
-        else if (isFolder) {
-            return RTrim(sHome, "\") "\" sRelative ; relative path (directory)
+        else if (RegexMatch(sRel, "^\\")) {
+            return s_drive sRel ; parent drive, root path
         }
-        else {
-            return s_parent "\" sRelative ; relative path (file)
+
+        SplitPath sRel, , , , , &s_drive
+        if (StrLen(s_drive) && StrLen(FileExist(sRel))) {
+            return sRel
         }
+
+        if (SubStr(sRel, 1, 1) == "\")
+        {
+            SplitPath sRef, , , , , &s_drive
+            return s_drive sRel
+        }
+
+        while (SubStr(sRel, 1, 3) == "..\") {
+            SplitPath sRef, , &s_parent
+            sRel := SubStr(sRel, 4)
+            sRef := s_parent
+        }
+        return sRef "\" sRel
     }
 
     /**************************************************
