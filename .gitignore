@@ -14,3 +14,5 @@ _notes
 /make/build-release.ahk.txt
 /cspell.json
 /docs/*.html
+/make/*.md
+!_includes/
