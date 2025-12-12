@@ -1,8 +1,8 @@
 ; ================================================================
 ; configuration settings for build-release.ahk
 ; ================================================================
-; @version 2025-12-05 release v1.0.4
-; @version 2025-12-11 release v1.0.5
+; @version 2025-12-08 move configuration to external script
+; @version 2025-12-11 move configuration to .ini file
 
 #Requires AutoHotkey v2.0
 

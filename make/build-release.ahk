@@ -14,15 +14,16 @@ if (!A_IsCompiled) {
     TraySetIcon("imageres.dll", 233) ; green check
 }
 
+ini_path := SubStr(A_ScriptFullPath, 1, -4) ".ini"
+if (!StrLen(FileExist(ini_path))) {
+    MsgBox("Ini file '" ini_path "' not found", S_TITLE, "iconx")
+    ExitApp 1
+}
+
 BuildRelease()
 {
     ; CONFIG =================================
 
-    ini_path := SubStr(A_ScriptFullPath, 1, -4) ".ini"
-    if (!StrLen(FileExist(ini_path))) {
-        MsgBox("Ini file '" ini_path "' not found", S_TITLE, "iconx")
-        ExitApp 1
-    }
     sVersion := IniRead(ini_path, "general", "version" , "") ; must match release Tag
     tempHome := IniRead(ini_path, "general", "tempHome", "") ; parent temp folder for all releases
     libRoot  := IniRead(ini_path, "general", "libRoot" , "") ; adjust if your lib is somewhere else
