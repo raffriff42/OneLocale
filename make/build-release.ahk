@@ -67,7 +67,7 @@ BuildRelease()
         sIncludes := IniReadSection(ini_path, sName "_includes", "")
 
         if (!StrLen(sFolder) || !StrLen(DirExist(sFolder))) {
-            MsgBox("'sName' folder not found!", S_TITLE, "iconx")
+            MsgBox(sName: ": 'folder' not found!", S_TITLE, "iconx")
             ExitApp
         }
         arProjects.Push({name:sName, folder:sFolder, copyLib:copyLib
@@ -200,7 +200,7 @@ SplitPathFunc(sPath)
 
 /**********************************************
  * #### CBool: convert an unknown variable into a Boolean
- * - Object variables assumed False
+ * - Object variables assumed False, unless they somehow = "true"
  */
 CBool(v)
 {
